@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061727E427CA777D00CE8931 /* TeamResolver in Frameworks */ = {isa = PBXBuildFile; productRef = 061727E327CA777D00CE8931 /* TeamResolver */; };
 		7CD809B327CA6283003F8702 /* Team_Dream_MachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD809B227CA6283003F8702 /* Team_Dream_MachineApp.swift */; };
 		7CD809B527CA6283003F8702 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD809B427CA6283003F8702 /* ContentView.swift */; };
 		7CD809B727CA6286003F8702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD809B627CA6286003F8702 /* Assets.xcassets */; };
@@ -48,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061727E427CA777D00CE8931 /* TeamResolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +70,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061727E227CA777D00CE8931 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7CD809A627CA6283003F8702 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +84,7 @@
 				7CD809B127CA6283003F8702 /* Team Dream Machine */,
 				7CD809C227CA6287003F8702 /* Team Dream MachineTests */,
 				7CD809B027CA6283003F8702 /* Products */,
+				061727E227CA777D00CE8931 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +141,9 @@
 			dependencies = (
 			);
 			name = "Team Dream Machine";
+			packageProductDependencies = (
+				061727E327CA777D00CE8931 /* TeamResolver */,
+			);
 			productName = "Team Dream Machine";
 			productReference = 7CD809AF27CA6283003F8702 /* Team Dream Machine.app */;
 			productType = "com.apple.product-type.application";
@@ -593,6 +606,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		061727E327CA777D00CE8931 /* TeamResolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TeamResolver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7CD809A727CA6283003F8702 /* Project object */;
 }
