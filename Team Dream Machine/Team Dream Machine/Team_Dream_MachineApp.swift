@@ -11,7 +11,7 @@ import SwiftUI
 struct Team_Dream_MachineApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RosterList()
         }
     }
 }
