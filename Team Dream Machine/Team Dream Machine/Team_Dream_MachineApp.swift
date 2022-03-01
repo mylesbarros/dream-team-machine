@@ -28,13 +28,6 @@ struct Team_Dream_MachineApp: App {
         let emptyTeam = Team()
         
         let builder = TeamBuilder()
-        let result = builder.buildTeam(4, testCombos, testCombos.count, team: emptyTeam)
-        
-        print("\nResults!")
-        print("Total Score: \(result.score)")
-        print("Say hi to your new team!")
-        result.newTeam.roster.forEach({ playerName in
-            print(playerName)
-        })
+        builder.buildTeam(2, testCombos, emptyTeam)
     }
 }
