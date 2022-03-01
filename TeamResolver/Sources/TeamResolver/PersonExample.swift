@@ -13,9 +13,10 @@ public struct Person: Hashable {
 }
 
 public struct Combo {
+    
     let person1: Person
     let person2: Person
-    let score: Int
+    var score: Float
 }
 
 public struct TeamResult {
@@ -27,12 +28,31 @@ public final class TeamBuilder {
     
     public init() {}
     
-    func sumTeam(team: [Combo]) -> Int{
-        var sum = 0
+    func sumTeam(team: [Combo]) -> Float{
+        var sum : Float = 0
         for combo in team{
             sum += combo.score
         }
         return sum
+    }
+    
+    private func averageCombos(combos: inout [Combo]) -> [Combo]{
+        var consolidated : [Combo] = []
+        var evaluatedPlayers: [Person] = []
+        for i in 0..<combos.count{
+            var combo1 = combos[i]
+            let comboPlayerWasAlreadyChecked = evaluatedPlayers.contains(where: { alreadyEvaluatedPerson in
+                combo1.person1 == alreadyEvaluatedPerson ||
+                combo1.person2 == alreadyEvaluatedPerson
+            })
+            
+            guard !comboPlayerWasAlreadyChecked else { continue }
+            
+            var combo2 = combos.first(where: {$0.person1 == combo1.person2 && $0.person2 == combo1.person1})!
+            combo1.score = (combo1.score + combo2.score) / 2
+            consolidated.append(combo1)
+        }
+        return consolidated
     }
     
     public func buildTeam(_ numTeams: Int, _ combos: [Combo], _ team: Team) {
@@ -139,6 +159,7 @@ public let testCombos = [
     Combo(person1: myles, person2: anicka, score: 0),
     Combo(person1: myles, person2: loran, score: 3),
     
+    Combo(person1: kaja, person2: myles, score: 1),
     Combo(person1: kaja, person2: nora, score: 1),
     Combo(person1: kaja, person2: xanthe, score: 0),
     Combo(person1: kaja, person2: adam, score: 0),
@@ -147,6 +168,8 @@ public let testCombos = [
     Combo(person1: kaja, person2: anicka, score: 1),
     Combo(person1: kaja, person2: loran, score: -2),
     
+    Combo(person1: nora, person2: myles, score: 0),
+    Combo(person1: nora, person2: kaja, score: 0),
     Combo(person1: nora, person2: xanthe, score: 3),
     Combo(person1: nora, person2: adam, score: -1),
     Combo(person1: nora, person2: honza, score: 0),
@@ -154,24 +177,50 @@ public let testCombos = [
     Combo(person1: nora, person2: anicka, score: 1),
     Combo(person1: nora, person2: loran, score: 0),
     
+    Combo(person1: xanthe, person2: myles, score: 3),
+    Combo(person1: xanthe, person2: kaja, score: -1),
+    Combo(person1: xanthe, person2: nora, score: 3),
     Combo(person1: xanthe, person2: adam, score: -1),
     Combo(person1: xanthe, person2: honza, score: 2),
     Combo(person1: xanthe, person2: danya, score: 0),
     Combo(person1: xanthe, person2: anicka, score: 1),
     Combo(person1: xanthe, person2: loran, score: 1),
     
+    Combo(person1: adam, person2: myles, score: 2),
+    Combo(person1: adam, person2: kaja, score: -1),
+    Combo(person1: adam, person2: nora, score: -1),
+    Combo(person1: adam, person2: xanthe, score: -1),
     Combo(person1: adam, person2: honza, score: 0),
     Combo(person1: adam, person2: danya, score: -1),
     Combo(person1: adam, person2: anicka, score: 2),
     Combo(person1: adam, person2: loran, score: -1),
     
+    Combo(person1: honza, person2: myles, score: 3),
+    Combo(person1: honza, person2: kaja, score: 2),
+    Combo(person1: honza, person2: nora, score: 0),
+    Combo(person1: honza, person2: xanthe, score: 0),
+    Combo(person1: honza, person2: adam, score: 0),
     Combo(person1: honza, person2: danya, score: 0),
     Combo(person1: honza, person2: anicka, score: 0),
     Combo(person1: honza, person2: loran, score: 0),
     
+    Combo(person1: danya, person2: myles, score: 0),
+    Combo(person1: danya, person2: kaja, score: -1),
+    Combo(person1: danya, person2: nora, score: 0),
+    Combo(person1: danya, person2: xanthe, score: -1),
+    Combo(person1: danya, person2: adam, score: 0),
+    Combo(person1: danya, person2: honza, score: -1),
     Combo(person1: danya, person2: anicka, score: 0),
     Combo(person1: danya, person2: loran, score: -1),
     
-    Combo(person1: anicka, person2: loran, score: 0),
+    Combo(person1: anicka, person2: myles, score: 3),
+    Combo(person1: anicka, person2: kaja, score: 1),
+    Combo(person1: anicka, person2: nora, score: 2),
+    Combo(person1: anicka, person2: xanthe, score: 3),
+    Combo(person1: anicka, person2: adam, score: 1),
+    Combo(person1: anicka, person2: honza, score: 0),
+    Combo(person1: anicka, person2: danya, score: 1),
+    Combo(person1: anicka, person2: loran, score: -1)
+    
 ]
 
