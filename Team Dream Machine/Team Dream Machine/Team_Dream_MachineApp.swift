@@ -12,21 +12,7 @@ import TeamResolver
 struct Team_Dream_MachineApp: App {
     var body: some Scene {
         WindowGroup {
-            RosterList()
+            ColorPickerView()
         }
-    }
-    
-    func ignoreMe() -> some View {
-        testXanthesCode()
-        
-        return Text("You're doing a great job!")
-    }
-    
-    // MARK: - Xanthe's Code Dumpster
-    
-    func testXanthesCode() {
-        
-        let builder = TeamBuilder()
-        builder.buildTeam(testCombos)
     }
 }

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		061727E427CA777D00CE8931 /* TeamResolver in Frameworks */ = {isa = PBXBuildFile; productRef = 061727E327CA777D00CE8931 /* TeamResolver */; };
 		7C553B2C27CFD78D00A9C52C /* TeamResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C553B2B27CFD78D00A9C52C /* TeamResultsViewModel.swift */; };
+		7C553B3027CFFF9300A9C52C /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C553B2F27CFFF9300A9C52C /* ColorPickerView.swift */; };
 		7C9CE7CB27CFC75D007C38D8 /* CloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */; };
 		7C9CE7CD27CFCE2A007C38D8 /* OnAnimationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */; };
 		7C9CE7CF27CFD5C0007C38D8 /* PlayerInterestConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CE27CFD5C0007C38D8 /* PlayerInterestConverter.swift */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		7C553B2B27CFD78D00A9C52C /* TeamResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultsViewModel.swift; sourceTree = "<group>"; };
+		7C553B2F27CFFF9300A9C52C /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudView.swift; sourceTree = "<group>"; };
 		7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAnimationComplete.swift; sourceTree = "<group>"; };
 		7C9CE7CE27CFD5C0007C38D8 /* PlayerInterestConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInterestConverter.swift; sourceTree = "<group>"; };
@@ -134,9 +136,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7C553B2E27CFFF8700A9C52C /* Color Picker */ = {
+			isa = PBXGroup;
+			children = (
+				7C553B2F27CFFF9300A9C52C /* ColorPickerView.swift */,
+			);
+			path = "Color Picker";
+			sourceTree = "<group>";
+		};
 		7CC5007C27CE17440024F77C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7C553B2E27CFFF8700A9C52C /* Color Picker */,
 				7CF7B9B827CF86410051144A /* Welcome Scene */,
 				7CC5009627CE747E0024F77C /* Team Results */,
 				7CD8BB6927CAF40400F09132 /* Player Pairing */,
@@ -453,6 +464,7 @@
 				7C9CE7CD27CFCE2A007C38D8 /* OnAnimationComplete.swift in Sources */,
 				7CC5008F27CE241D0024F77C /* InterestInputView.swift in Sources */,
 				7CD8BB7227CAF5E000F09132 /* PlayerIntersectionModel.swift in Sources */,
+				7C553B3027CFFF9300A9C52C /* ColorPickerView.swift in Sources */,
 				7CC5008727CE21300024F77C /* PairingInstructionsView.swift in Sources */,
 				7C9CE7CB27CFC75D007C38D8 /* CloudView.swift in Sources */,
 				7CC5008227CE185A0024F77C /* Rainbow.swift in Sources */,
