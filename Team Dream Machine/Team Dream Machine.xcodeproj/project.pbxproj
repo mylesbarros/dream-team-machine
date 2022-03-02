@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		061727E427CA777D00CE8931 /* TeamResolver in Frameworks */ = {isa = PBXBuildFile; productRef = 061727E327CA777D00CE8931 /* TeamResolver */; };
+		7C553B2C27CFD78D00A9C52C /* TeamResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C553B2B27CFD78D00A9C52C /* TeamResultsViewModel.swift */; };
 		7C9CE7CB27CFC75D007C38D8 /* CloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */; };
 		7C9CE7CD27CFCE2A007C38D8 /* OnAnimationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */; };
 		7C9CE7CF27CFD5C0007C38D8 /* PlayerInterestConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CE27CFD5C0007C38D8 /* PlayerInterestConverter.swift */; };
@@ -59,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C553B2B27CFD78D00A9C52C /* TeamResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultsViewModel.swift; sourceTree = "<group>"; };
 		7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudView.swift; sourceTree = "<group>"; };
 		7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAnimationComplete.swift; sourceTree = "<group>"; };
 		7C9CE7CE27CFD5C0007C38D8 /* PlayerInterestConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInterestConverter.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				061727E427CA777D00CE8931 /* TeamResolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +127,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		061727E227CA777D00CE8931 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7CC5007C27CE17440024F77C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +196,7 @@
 			children = (
 				7CC5009727CE749D0024F77C /* TeamResultsView.swift */,
 				7CC5009927CE76D80024F77C /* TeamView.swift */,
+				7C553B2B27CFD78D00A9C52C /* TeamResultsViewModel.swift */,
 			);
 			path = "Team Results";
 			sourceTree = "<group>";
@@ -195,6 +207,7 @@
 				7CD809DC27CA62FB003F8702 /* TeamResolver */,
 				7CD809B127CA6283003F8702 /* Team Dream Machine */,
 				7CD809B027CA6283003F8702 /* Products */,
+				061727E227CA777D00CE8931 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -303,6 +316,7 @@
 			);
 			name = "Team Dream Machine";
 			packageProductDependencies = (
+				061727E327CA777D00CE8931 /* TeamResolver */,
 			);
 			productName = "Team Dream Machine";
 			productReference = 7CD809AF27CA6283003F8702 /* Team Dream Machine.app */;
@@ -431,6 +445,7 @@
 				7CD8BB7427CAF61100F09132 /* PlayerFeedbackView.swift in Sources */,
 				7CC5008927CE22F30024F77C /* PassThePhoneViewModel.swift in Sources */,
 				7CD8BB6627CAE48300F09132 /* RosterList.swift in Sources */,
+				7C553B2C27CFD78D00A9C52C /* TeamResultsViewModel.swift in Sources */,
 				7CC5009527CE6C380024F77C /* StripesShape.swift in Sources */,
 				7CC5009A27CE76D80024F77C /* TeamView.swift in Sources */,
 				7CC5009127CE4E520024F77C /* PairingSceneLinkFactory.swift in Sources */,
@@ -797,6 +812,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		061727E327CA777D00CE8931 /* TeamResolver */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TeamResolver;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7CD809A727CA6283003F8702 /* Project object */;
 }
