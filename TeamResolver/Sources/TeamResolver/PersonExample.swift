@@ -7,9 +7,17 @@
 
 import Foundation
 
+public struct TeamAllocation{
+    public var team1 : Team
+    public var team2 : Team
+}
+
 public struct Person: Hashable {
-    let id: Int
-    let name: String
+    public let name: String
+    
+    public init(name: String) {
+        self.name = name
+    }
 }
 
 public struct Combo {
@@ -17,6 +25,13 @@ public struct Combo {
     let person1: Person
     let person2: Person
     var score: Float
+    
+    public init(person1: Person, person2: Person, score: Float) {
+        self.person1 = person1
+        self.person2 = person2
+        self.score = score
+    }
+    
 }
 
 public struct TeamResult {
@@ -38,16 +53,20 @@ public final class TeamBuilder {
     
     private func averageCombos(combos: [Combo]) -> [Combo]{
         var consolidated : [Combo] = []
-        let evaluatedPlayers: [Person] = []
-        for i in 0..<combos.count{
+        for i in 0..<combos.count {
             var combo1 = combos[i]
-            let comboPlayerWasAlreadyChecked = evaluatedPlayers.contains(where: { alreadyEvaluatedPerson in
-                combo1.person1 == alreadyEvaluatedPerson ||
-                combo1.person2 == alreadyEvaluatedPerson
+            
+            let comboWasAlreadyChecked = consolidated.contains(where: { alreadyEvaluatedCombo in
+                let evaledComboPeople: [Person] = [alreadyEvaluatedCombo.person1, alreadyEvaluatedCombo.person2]
+                
+                return evaledComboPeople.contains(combo1.person1) && evaledComboPeople.contains(combo1.person2)
             })
             
-            guard !comboPlayerWasAlreadyChecked else { continue }
-            guard let combo2 = combos.first(where: {$0.person1 == combo1.person2 && $0.person2 == combo1.person1}) else { continue }
+            guard !comboWasAlreadyChecked else { continue }
+            guard let combo2 = combos.first(where: {
+                let combo1People = [combo1.person1, combo1.person2]
+                return combo1People.contains($0.person1) && combo1People.contains($0.person2)
+            }) else { continue }
             
             combo1.score = (combo1.score + combo2.score) / 2
             consolidated.append(combo1)
@@ -55,7 +74,7 @@ public final class TeamBuilder {
         return consolidated
     }
     
-    public func buildTeam(_ numTeams: Int, _ combos: [Combo], _ team: Team) {
+    public func buildTeam(_ combos: [Combo]) -> TeamAllocation {
         
         var combos: [Combo] = combos
         //Average player intersections to account for differing opinions
@@ -75,7 +94,7 @@ public final class TeamBuilder {
         //Iterate through combos
         var evaluatedPlayers: [Person] = []
         for i in 0..<combos.count{
-            var combo = combos[i]
+            let combo = combos[i]
             
             //Each person can only be on one time
             let comboPlayerWasAlreadyChecked = evaluatedPlayers.contains(where: { alreadyEvaluatedPerson in
@@ -110,6 +129,7 @@ public final class TeamBuilder {
         if let unevaluatedPlayer = unevaluatedPlayers.first {
             team1Roster.add(individualPlayer: unevaluatedPlayer)
         }
+        return TeamAllocation(team1: team1Roster, team2: team2Roster)
     }
 }
 
@@ -138,15 +158,15 @@ public struct Team {
     
 }
 
-let myles = Person(id: 0, name: "Myles")
-let kaja = Person(id: 1, name: "Kaja")
-let nora = Person(id: 2, name: "Nora")
-let xanthe = Person(id: 3, name: "Xanthe")
-let adam = Person(id: 4, name: "Adam")
-let honza = Person(id: 5, name: "Honza")
-let danya = Person(id: 6, name: "Danya")
-let anicka = Person(id: 7, name: "Anicka")
-let loran = Person(id: 8, name: "Loran")
+let myles = Person(name: "Myles")
+let kaja = Person( name: "Kaja")
+let nora = Person(name: "Nora")
+let xanthe = Person(name: "Xanthe")
+let adam = Person(name: "Adam")
+let honza = Person(name: "Honza")
+let danya = Person(name: "Danya")
+let anicka = Person(name: "Anicka")
+let loran = Person(name: "Loran")
 
 public let testCombos = [
     Combo(person1: myles, person2: kaja, score: -1),

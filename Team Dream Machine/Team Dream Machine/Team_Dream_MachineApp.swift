@@ -25,9 +25,8 @@ struct Team_Dream_MachineApp: App {
     // MARK: - Xanthe's Code Dumpster
     
     func testXanthesCode() {
-        let emptyTeam = Team()
         
         let builder = TeamBuilder()
-        builder.buildTeam(2, testCombos, emptyTeam)
+        builder.buildTeam(testCombos)
     }
 }

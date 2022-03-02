@@ -7,38 +7,55 @@
 
 import Combine
 import Foundation
+import TeamResolver
 
 final class TeamResultsViewModel: ObservableObject {
 
     // MARK: - Public Properties
 
-    @Published var isLoading: Bool = true
     @Published var firstTeamPlayers: [Person] = []
     @Published var secondTeamPlayers: [Person] = []
 
     // MARK: - Private Properties
 
     private let playerPreferences: [PlayerPairing]
-    private let pairInterestConverter: PairInterestConverter = .init()
 
     // MARK: - Initializers
 
     init(playerPreferences: [PlayerPairing]) {
         self.playerPreferences = playerPreferences
+    }
+    
+    func processResults() {
+        let teamBuilder = TeamBuilder()
+        
+        DispatchQueue.global(qos: .userInitiated).async {
+            let combos: [Combo] = self.playerPreferences.map({ Combo(pair: $0) })
+            let teamResults = teamBuilder.buildTeam(combos)
+            
+            DispatchQueue.main.async {
+                self.firstTeamPlayers = teamResults.team1.roster.map({ .init(name: $0) })
+                self.secondTeamPlayers = teamResults.team2.roster.map({ .init(name: $0) })
+            }
+        }
+    }
+}
 
-        // TODO: XANTHE
-        // You should call the framework here.
-        // The combos to send are available in playerPreferences.
-        // You should save the results into firstTeamPlayers and secondTeamPlayers
-        // You can delete this existing code at the bottom but you will need to set
-        // isLoading to false once your data is loaded.
-        //
-        // The `PlayerPairing` contains a `.pairingInterest` property that expresses
-        // the pair weight. To convert this to a Float call...
-        // let floatWeight = pairInterestConverter.convert(playerPairing.pairingInterest)
-        //
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-            self.isLoading = false
-        })
+// MARK: - Convenience Extensions (Map App -> Package types)
+
+extension TeamResolver.Person {
+    init(person: Person) {
+        self.init(name: person.name)
+    }
+}
+
+extension TeamResolver.Combo {
+    init(pair: PlayerPairing) {
+        let pairInterestConverter: PairInterestConverter = .init()
+        self.init(
+            person1: TeamResolver.Person(person: pair.player),
+            person2: TeamResolver.Person(person: pair.potentialTeammate),
+            score: pairInterestConverter.convert(pair.pairingInterest)
+        )
     }
 }

@@ -11,7 +11,7 @@ struct TeamResultsView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if viewModel.isLoading {
+                if viewModel.secondTeamPlayers.isEmpty {
                     ProgressView()
                 } else {
                     Form {
@@ -26,6 +26,9 @@ struct TeamResultsView: View {
             }
             .background(Color.background)
             .navigationTitle("✨ Dream Teams ✨")
+            .onAppear(perform: {
+                viewModel.processResults()
+            })
         }
     }
 
