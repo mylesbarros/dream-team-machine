@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C9CE7CB27CFC75D007C38D8 /* CloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */; };
+		7C9CE7CD27CFCE2A007C38D8 /* OnAnimationComplete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */; };
+		7C9CE7CF27CFD5C0007C38D8 /* PlayerInterestConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CE27CFD5C0007C38D8 /* PlayerInterestConverter.swift */; };
 		7CC5007B27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5007A27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift */; };
 		7CC5007F27CE179B0024F77C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5007E27CE179B0024F77C /* Device.swift */; };
 		7CC5008227CE185A0024F77C /* Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008127CE185A0024F77C /* Rainbow.swift */; };
@@ -16,6 +19,10 @@
 		7CC5008F27CE241D0024F77C /* InterestInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008E27CE241D0024F77C /* InterestInputView.swift */; };
 		7CC5009127CE4E520024F77C /* PairingSceneLinkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009027CE4E520024F77C /* PairingSceneLinkFactory.swift */; };
 		7CC5009327CE4FFF0024F77C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009227CE4FFF0024F77C /* Person.swift */; };
+		7CC5009527CE6C380024F77C /* StripesShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009427CE6C380024F77C /* StripesShape.swift */; };
+		7CC5009827CE749D0024F77C /* TeamResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009727CE749D0024F77C /* TeamResultsView.swift */; };
+		7CC5009A27CE76D80024F77C /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009927CE76D80024F77C /* TeamView.swift */; };
+		7CC5009F27CE7C460024F77C /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009E27CE7C460024F77C /* AppColors.swift */; };
 		7CD809B327CA6283003F8702 /* Team_Dream_MachineApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD809B227CA6283003F8702 /* Team_Dream_MachineApp.swift */; };
 		7CD809B727CA6286003F8702 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD809B627CA6286003F8702 /* Assets.xcassets */; };
 		7CD809BA27CA6286003F8702 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CD809B927CA6286003F8702 /* Preview Assets.xcassets */; };
@@ -26,6 +33,12 @@
 		7CD8BB7027CAF49900F09132 /* PassThePhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8BB6F27CAF49900F09132 /* PassThePhoneView.swift */; };
 		7CD8BB7227CAF5E000F09132 /* PlayerIntersectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8BB7127CAF5E000F09132 /* PlayerIntersectionModel.swift */; };
 		7CD8BB7427CAF61100F09132 /* PlayerFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8BB7327CAF61100F09132 /* PlayerFeedbackView.swift */; };
+		7CF7B9BA27CF86510051144A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7B9B927CF86510051144A /* WelcomeView.swift */; };
+		7CF7B9C227CF88A60051144A /* BubbleLemonB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF7B9BD27CF88A60051144A /* BubbleLemonB.ttf */; };
+		7CF7B9C527CF88A60051144A /* BubbleLemonA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF7B9C127CF88A60051144A /* BubbleLemonA.ttf */; };
+		7CF7B9CB27CF88B90051144A /* SunnyspellsRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF7B9C927CF88B90051144A /* SunnyspellsRegular.otf */; };
+		7CF7B9CD27CF88C10051144A /* kirby-classic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF7B9CC27CF88C10051144A /* kirby-classic.ttf */; };
+		7CF7B9CE27CF88C50051144A /* BalonkuRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF7B9C627CF88AD0051144A /* BalonkuRegular.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +59,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudView.swift; sourceTree = "<group>"; };
+		7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnAnimationComplete.swift; sourceTree = "<group>"; };
+		7C9CE7CE27CFD5C0007C38D8 /* PlayerInterestConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInterestConverter.swift; sourceTree = "<group>"; };
 		7CC5007A27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntersectionCoordinator.swift; sourceTree = "<group>"; };
 		7CC5007E27CE179B0024F77C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		7CC5008127CE185A0024F77C /* Rainbow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rainbow.swift; sourceTree = "<group>"; };
@@ -55,6 +71,10 @@
 		7CC5008E27CE241D0024F77C /* InterestInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestInputView.swift; sourceTree = "<group>"; };
 		7CC5009027CE4E520024F77C /* PairingSceneLinkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingSceneLinkFactory.swift; sourceTree = "<group>"; };
 		7CC5009227CE4FFF0024F77C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		7CC5009427CE6C380024F77C /* StripesShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripesShape.swift; sourceTree = "<group>"; };
+		7CC5009727CE749D0024F77C /* TeamResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultsView.swift; sourceTree = "<group>"; };
+		7CC5009927CE76D80024F77C /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
+		7CC5009E27CE7C460024F77C /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		7CD809AF27CA6283003F8702 /* Team Dream Machine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Team Dream Machine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CD809B227CA6283003F8702 /* Team_Dream_MachineApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team_Dream_MachineApp.swift; sourceTree = "<group>"; };
 		7CD809B627CA6286003F8702 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -69,6 +89,13 @@
 		7CD8BB6F27CAF49900F09132 /* PassThePhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThePhoneView.swift; sourceTree = "<group>"; };
 		7CD8BB7127CAF5E000F09132 /* PlayerIntersectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntersectionModel.swift; sourceTree = "<group>"; };
 		7CD8BB7327CAF61100F09132 /* PlayerFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFeedbackView.swift; sourceTree = "<group>"; };
+		7CF7B9B927CF86510051144A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		7CF7B9BD27CF88A60051144A /* BubbleLemonB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BubbleLemonB.ttf; sourceTree = "<group>"; };
+		7CF7B9C127CF88A60051144A /* BubbleLemonA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BubbleLemonA.ttf; sourceTree = "<group>"; };
+		7CF7B9C627CF88AD0051144A /* BalonkuRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BalonkuRegular.otf; sourceTree = "<group>"; };
+		7CF7B9C927CF88B90051144A /* SunnyspellsRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SunnyspellsRegular.otf; sourceTree = "<group>"; };
+		7CF7B9CC27CF88C10051144A /* kirby-classic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "kirby-classic.ttf"; sourceTree = "<group>"; };
+		7CF7B9D127CF8B0F0051144A /* Team-Dream-Machine-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Team-Dream-Machine-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +126,8 @@
 		7CC5007C27CE17440024F77C /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7CF7B9B827CF86410051144A /* Welcome Scene */,
+				7CC5009627CE747E0024F77C /* Team Results */,
 				7CD8BB6927CAF40400F09132 /* Player Pairing */,
 				7CD8BB6427CAE47000F09132 /* Roster Creation */,
 				7CC5009227CE4FFF0024F77C /* Person.swift */,
@@ -110,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				7CC5007E27CE179B0024F77C /* Device.swift */,
+				7C9CE7CE27CFD5C0007C38D8 /* PlayerInterestConverter.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -118,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				7CC5008127CE185A0024F77C /* Rainbow.swift */,
+				7CC5009427CE6C380024F77C /* StripesShape.swift */,
+				7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */,
+				7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */,
 			);
 			path = "Accessory Views";
 			sourceTree = "<group>";
@@ -147,6 +180,15 @@
 			path = "Accessory Views";
 			sourceTree = "<group>";
 		};
+		7CC5009627CE747E0024F77C /* Team Results */ = {
+			isa = PBXGroup;
+			children = (
+				7CC5009727CE749D0024F77C /* TeamResultsView.swift */,
+				7CC5009927CE76D80024F77C /* TeamView.swift */,
+			);
+			path = "Team Results";
+			sourceTree = "<group>";
+		};
 		7CD809A627CA6283003F8702 = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +211,8 @@
 		7CD809B127CA6283003F8702 /* Team Dream Machine */ = {
 			isa = PBXGroup;
 			children = (
+				7CF7B9D127CF8B0F0051144A /* Team-Dream-Machine-Info.plist */,
+				7CF7B9BB27CF88930051144A /* Fonts */,
 				7CC5008027CE18500024F77C /* Accessory Views */,
 				7CC5007D27CE176C0024F77C /* Utilities */,
 				7CC5007C27CE17440024F77C /* Scenes */,
@@ -176,6 +220,7 @@
 				7CD809B627CA6286003F8702 /* Assets.xcassets */,
 				7CD809B827CA6286003F8702 /* Preview Content */,
 				7CD8BB6D27CAF45300F09132 /* View+RoundedCorners.swift */,
+				7CC5009E27CE7C460024F77C /* AppColors.swift */,
 			);
 			path = "Team Dream Machine";
 			sourceTree = "<group>";
@@ -221,6 +266,26 @@
 			path = "Add Player Drawer";
 			sourceTree = "<group>";
 		};
+		7CF7B9B827CF86410051144A /* Welcome Scene */ = {
+			isa = PBXGroup;
+			children = (
+				7CF7B9B927CF86510051144A /* WelcomeView.swift */,
+			);
+			path = "Welcome Scene";
+			sourceTree = "<group>";
+		};
+		7CF7B9BB27CF88930051144A /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7CF7B9CC27CF88C10051144A /* kirby-classic.ttf */,
+				7CF7B9C927CF88B90051144A /* SunnyspellsRegular.otf */,
+				7CF7B9C627CF88AD0051144A /* BalonkuRegular.otf */,
+				7CF7B9BD27CF88A60051144A /* BubbleLemonB.ttf */,
+				7CF7B9C127CF88A60051144A /* BubbleLemonA.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,6 +302,8 @@
 			dependencies = (
 			);
 			name = "Team Dream Machine";
+			packageProductDependencies = (
+			);
 			productName = "Team Dream Machine";
 			productReference = 7CD809AF27CA6283003F8702 /* Team Dream Machine.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +376,8 @@
 				Base,
 			);
 			mainGroup = 7CD809A627CA6283003F8702;
+			packageReferences = (
+			);
 			productRefGroup = 7CD809B027CA6283003F8702 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -325,8 +394,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CF7B9CE27CF88C50051144A /* BalonkuRegular.otf in Resources */,
+				7CF7B9CD27CF88C10051144A /* kirby-classic.ttf in Resources */,
 				7CD809BA27CA6286003F8702 /* Preview Assets.xcassets in Resources */,
+				7CF7B9C227CF88A60051144A /* BubbleLemonB.ttf in Resources */,
 				7CD809B727CA6286003F8702 /* Assets.xcassets in Resources */,
+				7CF7B9CB27CF88B90051144A /* SunnyspellsRegular.otf in Resources */,
+				7CF7B9C527CF88A60051144A /* BubbleLemonA.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,15 +431,23 @@
 				7CD8BB7427CAF61100F09132 /* PlayerFeedbackView.swift in Sources */,
 				7CC5008927CE22F30024F77C /* PassThePhoneViewModel.swift in Sources */,
 				7CD8BB6627CAE48300F09132 /* RosterList.swift in Sources */,
+				7CC5009527CE6C380024F77C /* StripesShape.swift in Sources */,
+				7CC5009A27CE76D80024F77C /* TeamView.swift in Sources */,
 				7CC5009127CE4E520024F77C /* PairingSceneLinkFactory.swift in Sources */,
 				7CD8BB7027CAF49900F09132 /* PassThePhoneView.swift in Sources */,
+				7C9CE7CD27CFCE2A007C38D8 /* OnAnimationComplete.swift in Sources */,
 				7CC5008F27CE241D0024F77C /* InterestInputView.swift in Sources */,
 				7CD8BB7227CAF5E000F09132 /* PlayerIntersectionModel.swift in Sources */,
 				7CC5008727CE21300024F77C /* PairingInstructionsView.swift in Sources */,
+				7C9CE7CB27CFC75D007C38D8 /* CloudView.swift in Sources */,
 				7CC5008227CE185A0024F77C /* Rainbow.swift in Sources */,
 				7CD8BB6C27CAF43700F09132 /* AddPlayerViewModel.swift in Sources */,
 				7CD809B327CA6283003F8702 /* Team_Dream_MachineApp.swift in Sources */,
 				7CC5009327CE4FFF0024F77C /* Person.swift in Sources */,
+				7CF7B9BA27CF86510051144A /* WelcomeView.swift in Sources */,
+				7C9CE7CF27CFD5C0007C38D8 /* PlayerInterestConverter.swift in Sources */,
+				7CC5009827CE749D0024F77C /* TeamResultsView.swift in Sources */,
+				7CC5009F27CE7C460024F77C /* AppColors.swift in Sources */,
 				7CD8BB6E27CAF45300F09132 /* View+RoundedCorners.swift in Sources */,
 				7CD8BB6827CAE53800F09132 /* AddPlayerDrawer.swift in Sources */,
 			);
@@ -528,6 +610,7 @@
 				DEVELOPMENT_TEAM = 2Q6F352S9S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Team-Dream-Machine-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -558,6 +641,7 @@
 				DEVELOPMENT_TEAM = 2Q6F352S9S;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Team-Dream-Machine-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

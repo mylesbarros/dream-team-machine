@@ -18,7 +18,7 @@ struct InterestInputView: View {
                         Text(viewModel.inputs[index].rawValue)
                             .font(.system(size: 52))
                     }
-                )
+                ).buttonStyle(OpinionButtonStyle())
                 if shouldIncludeSpacer {
                     Spacer()
                         .frame(width: 24, height: 16, alignment: .center)
@@ -52,4 +52,12 @@ final class InterestInputViewModel {
         let selectedInput = inputs[selectedElement]
         selectionDelegate?.userSelected(interest: selectedInput)
     }
+}
+
+struct OpinionButtonStyle: ButtonStyle {
+
+    func makeBody(configuration: Self.Configuration) -> some View {
+            configuration.label
+            .opacity(configuration.isPressed ? 0.6 : 1)
+        }
 }

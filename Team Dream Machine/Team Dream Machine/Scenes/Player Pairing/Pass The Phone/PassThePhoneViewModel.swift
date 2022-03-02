@@ -13,6 +13,7 @@ final class PassThePhoneViewModel: ObservableObject {
     // MARK: - Public Properties
 
     let intendedUser: Person
+    let isFirstUser: Bool
 
     // MARK: - Private Properties
 
@@ -20,8 +21,9 @@ final class PassThePhoneViewModel: ObservableObject {
 
     // MARK: - Initializers
 
-    init(intendedUser: Person, delegate: PlayerPairingNavigationDelegate) {
+    init(intendedUser: Person, isFirstUser: Bool, delegate: PlayerPairingNavigationDelegate) {
         self.intendedUser = intendedUser
+        self.isFirstUser = isFirstUser
         self.delegate = delegate
     }
 

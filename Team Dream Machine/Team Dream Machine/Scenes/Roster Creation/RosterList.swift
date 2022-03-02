@@ -22,11 +22,13 @@ struct RosterList: View {
                 .overlay(Group {
                     if viewModel.people.isEmpty {
                         Text("You don't have any players.\nNo time like the present to add some!")
+                            .foregroundColor(.textPrimary)
                             .multilineTextAlignment(.center)
                     }
-                })
+                }
+                )
                 // Navigation Bar
-                .navigationTitle("🧢 Player Roster")
+                .navigationTitle("Player Roster 🧢")
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing, content: {
                         Button("Form Teams") {
@@ -61,13 +63,19 @@ struct RosterList: View {
     @State private var viewDidAppear: Bool = false
 
     private let pairingSceneFactory = PairingSceneLinkFactory()
+    private var screenWidth: CGFloat { Device.screen.width }
 }
 
 final class RosterListViewModel: ObservableObject {
 
     // MARK: - Public Properties
 
-    @Published var people: [Person] = []
+    @Published var people: [Person] = [
+        .init(name: "Kaja"),
+        .init(name: "Myles"),
+        .init(name: "Nora"),
+        .init(name: "Xanthe")
+    ]
     @Published var shouldShowCreationInterface: Bool = false
     @Published var shouldTransitionToPairing: Bool = false
 
@@ -83,11 +91,5 @@ extension RosterListViewModel: PlayerCreationDelegate {
 
     func userRequestedToClosePlayerCreation() {
         withAnimation { shouldShowCreationInterface = false }
-    }
-}
-
-struct RosterList_Previews: PreviewProvider {
-    static var previews: some View {
-        RosterList()
     }
 }

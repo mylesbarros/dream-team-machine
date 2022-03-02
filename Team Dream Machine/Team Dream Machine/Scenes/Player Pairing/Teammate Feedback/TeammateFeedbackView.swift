@@ -12,23 +12,32 @@ struct TeammateFeedbackView: View {
     var body: some View {
         VStack {
             Spacer()
-                .frame(width: screenWidth, height: 32, alignment: .center)
+                .frame(width: screenWidth, height: 48, alignment: .center)
             Text("How would you feel about being on a team with...")
+                .foregroundColor(.textPrimary)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
-                .font(.headline)
+                .font(.system(size: 24))
                 .padding(.init(top: 0, leading: 32, bottom: 8, trailing: 32))
-            Text(viewModel.potentialTeammateName)
-                .foregroundColor(.pink)
-                .font(.title)
-                .transition(.opacity)
-                .id("TeammateName-\(viewModel.potentialTeammateName)")
+            if viewModel.shouldBlankText {
+                Text(" ")
+                    .frame(width: screenWidth, height: 52, alignment: .center)
+            } else {
+                Text(viewModel.potentialTeammateName)
+                    .foregroundColor(.textName)
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .frame(width: screenWidth, height: 52, alignment: .center)
+                    .transition(.stripes(stripes: 6, horizontal: true))
+                    .id("TeammateName-\(viewModel.potentialTeammateName)")
+            }
             Spacer()
                 .frame(width: screenWidth, height: screenHeight / 8, alignment: .center)
             InterestInputView(selectionDelegate: viewModel)
                 .frame(maxHeight: .infinity, alignment: .center)
             Spacer()
         }
+        .background(Color.background)
     }
 
     @ObservedObject private var viewModel: TeammateFeedbackViewModel
@@ -52,6 +61,7 @@ protocol FeedbackDelegate: AnyObject {
 final class TeammateFeedbackViewModel: ObservableObject {
 
     @Published var potentialTeammateName: String
+    @Published var shouldBlankText: Bool = false
 
     private var currentTeammate: Person
 
@@ -83,8 +93,18 @@ extension TeammateFeedbackViewModel: InterestSelectionDelegate {
         feedback.append(pairingFeedback)
 
         if !potentialTeammates.isEmpty {
-            currentTeammate = potentialTeammates.removeFirst()
-            withAnimation { self.potentialTeammateName = currentTeammate.name }
+            let newTeammateToConsider = potentialTeammates.removeFirst()
+            withAnimation {
+                DispatchQueue.main.async {
+                    self.shouldBlankText = true
+                    self.potentialTeammateName = newTeammateToConsider.name
+                    self.currentTeammate = newTeammateToConsider
+                }
+            }
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
+                withAnimation { self.shouldBlankText = false }
+            })
         }
         else {
             delegate?.userDidProvide(feedback: feedback)

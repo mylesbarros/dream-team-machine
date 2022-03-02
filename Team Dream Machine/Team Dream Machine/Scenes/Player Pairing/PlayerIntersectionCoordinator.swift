@@ -16,9 +16,13 @@ struct PlayerPairingCoordinator: View {
         ZStack {
             if !didAppear { EmptyView() }
             else {
-                if !viewModel.doesPlayerHaveThePhone {
+                if viewModel.doneGatheringFeedback {
+                    TeamResultsView(playerPreferences: viewModel.pairings)
+                }
+                else if !viewModel.doesPlayerHaveThePhone {
                     PassThePhoneView(
                         nextPlayerGivingFeedback: viewModel.playerGivingFeedback!,
+                        isFirstUser: viewModel.isFirstUser,
                         navigationDelegate: viewModel
                     )
                 } else {
@@ -26,10 +30,12 @@ struct PlayerPairingCoordinator: View {
                         getFeedbackFor: viewModel.potentialTeammates,
                         from: viewModel.playerGivingFeedback!,
                         delegate: viewModel
-                    ).transition(.backslide)
+                    )
                 }
             }
         }
+        .background(Color.background)
+        .transition(.backslide)
         .onAppear(perform: {
             viewModel.sceneIsActive()
             self.didAppear = true
@@ -39,6 +45,8 @@ struct PlayerPairingCoordinator: View {
     @ObservedObject var viewModel: PlayerPairingCoordinatorViewModel
 
     @State private var didAppear: Bool = false
+
+    private var screenHeight: CGFloat { Device.screen.height }
 
     init(rosterProvider: RosterProvider) {
         viewModel = .init(rosterProviding: rosterProvider)
@@ -57,6 +65,11 @@ final class PlayerPairingCoordinatorViewModel: ObservableObject {
 
     @Published var playerGivingFeedback: Person?
     @Published var doesPlayerHaveThePhone: Bool = false
+    @Published var doneGatheringFeedback: Bool = false
+
+    private(set) var pairings: [PlayerPairing] = []
+
+    private(set) var isFirstUser: Bool = true
 
     var potentialTeammates: [Person] {
         var teammates = playerPairBuilder.allPlayers
@@ -92,8 +105,11 @@ extension PlayerPairingCoordinatorViewModel: PlayerPairingNavigationDelegate {
 
 extension PlayerPairingCoordinatorViewModel: FeedbackDelegate {
     func userDidProvide(feedback: [PlayerPairing]) {
+        pairings.append(contentsOf: feedback)
+        isFirstUser = false
+        
         guard let nextPlayer = playerPairBuilder.dequeNextPlayerToPair() else {
-            // We're done pairing!
+            doneGatheringFeedback = true
             return
         }
 
