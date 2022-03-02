@@ -36,9 +36,9 @@ public final class TeamBuilder {
         return sum
     }
     
-    private func averageCombos(combos: inout [Combo]) -> [Combo]{
+    private func averageCombos(combos: [Combo]) -> [Combo]{
         var consolidated : [Combo] = []
-        var evaluatedPlayers: [Person] = []
+        let evaluatedPlayers: [Person] = []
         for i in 0..<combos.count{
             var combo1 = combos[i]
             let comboPlayerWasAlreadyChecked = evaluatedPlayers.contains(where: { alreadyEvaluatedPerson in
@@ -47,8 +47,8 @@ public final class TeamBuilder {
             })
             
             guard !comboPlayerWasAlreadyChecked else { continue }
+            guard let combo2 = combos.first(where: {$0.person1 == combo1.person2 && $0.person2 == combo1.person1}) else { continue }
             
-            var combo2 = combos.first(where: {$0.person1 == combo1.person2 && $0.person2 == combo1.person1})!
             combo1.score = (combo1.score + combo2.score) / 2
             consolidated.append(combo1)
         }
@@ -57,9 +57,11 @@ public final class TeamBuilder {
     
     public func buildTeam(_ numTeams: Int, _ combos: [Combo], _ team: Team) {
         
-        //TODO: Average player intersections to account for differing opinions
         var combos: [Combo] = combos
+        //Average player intersections to account for differing opinions
+        combos = averageCombos(combos: combos)
         
+        //Sort combos desc
         combos.sort(by: { lhs, rhs in
             lhs.score > rhs.score
         })
@@ -70,10 +72,12 @@ public final class TeamBuilder {
         var team1Roster = Team()
         var team2Roster = Team()
         
+        //Iterate through combos
         var evaluatedPlayers: [Person] = []
         for i in 0..<combos.count{
             var combo = combos[i]
             
+            //Each person can only be on one time
             let comboPlayerWasAlreadyChecked = evaluatedPlayers.contains(where: { alreadyEvaluatedPerson in
                 combo.person1 == alreadyEvaluatedPerson ||
                 combo.person2 == alreadyEvaluatedPerson
@@ -81,6 +85,7 @@ public final class TeamBuilder {
             
             guard !comboPlayerWasAlreadyChecked else { continue }
             
+            //Add the combo to the team with the lower current score
             let sum1 = sumTeam(team: team1Scores)
             let sum2 = sumTeam(team: team2Scores)
             if (sum1 <= sum2){
@@ -98,19 +103,13 @@ public final class TeamBuilder {
         let comboPeople: [Person] = combos.flatMap({ [$0.person1, $0.person2] })
         let allPlayers : Set<Person> = Set(comboPeople)
         
+        //Account for uneven numbers of people, add last person to first team
         var unevaluatedPlayers = allPlayers
         unevaluatedPlayers.subtract(evaluatedPlayers)
         assert(unevaluatedPlayers.count <= 1)
         if let unevaluatedPlayer = unevaluatedPlayers.first {
-            //Account for uneven numbers of people, add last person to first team
             team1Roster.add(individualPlayer: unevaluatedPlayer)
         }
-        
-        print("Team 1:\(team1Roster)")
-        print("Team1 Score\(sumTeam(team: team1Scores))")
-        print("Team 2:\(team2Roster)")
-        print("Team1 Score\(sumTeam(team: team2Scores))")
-        
     }
 }
 
@@ -221,6 +220,5 @@ public let testCombos = [
     Combo(person1: anicka, person2: honza, score: 0),
     Combo(person1: anicka, person2: danya, score: 1),
     Combo(person1: anicka, person2: loran, score: -1)
-    
 ]
 
