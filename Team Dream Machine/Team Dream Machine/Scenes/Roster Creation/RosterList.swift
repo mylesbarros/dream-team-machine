@@ -5,6 +5,7 @@
 //  Created by Myles Barros on 26.02.2022.
 //
 
+import Combine
 import SwiftUI
 
 struct RosterList: View {
@@ -12,59 +13,70 @@ struct RosterList: View {
     // MARK: - Public Properties
 
     var body: some View {
-        ZStack {
-            NavigationView {
-                List(viewModel.people) { person in
-                    Text(person.name)
-                }
-                .animation(.easeInOut)
-                .background(LinearGradient(
-                    gradient: Gradient(colors: [
-                        .Roster.rosterGradientTop,
-                        .Roster.rosterGradientBottom
-                    ]),
-                    startPoint: .top,
-                    endPoint: .bottom
-                ))
-                .overlay(Group {
-                    emptyState()
-                })
-                // Navigation Bar
-                .navigationTitle("Player Roster 🧢")
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing, content: {
-                        Button("Form Teams") {
-                            viewModel.shouldShowCreationInterface = false
-                            viewModel.shouldTransitionToPairing = true
-                        }
+        GeometryReader { screen in
+            ZStack {
+                NavigationView {
+                    List(viewModel.people) { person in
+                        Text(person.name)
+                    }
+                    .animation(.easeInOut)
+                    .background(LinearGradient(
+                        gradient: Gradient(colors: [
+                            .Roster.rosterGradientTop,
+                            .Roster.rosterGradientBottom
+                        ]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    ))
+                    .overlay(Group {
+                        emptyState()
                     })
-                    ToolbarItem(placement: .bottomBar, content: {
-                        Button("Add New Players") {
-                            withAnimation { viewModel.shouldShowCreationInterface = true }
-                        }
-                    })
+                    // Navigation Bar
+                    .navigationTitle("Player Roster 🧢")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing, content: {
+                            Button("Form Teams") {
+                                viewModel.shouldShowCreationInterface = false
+                                viewModel.shouldTransitionToPairing = true
+                            }
+                        })
+                        ToolbarItem(placement: .bottomBar, content: {
+                            Button("Add New Players") {
+                                withAnimation { viewModel.shouldShowCreationInterface = true }
+                            }
+                        })
+                    }
                 }
-            }
-            // Player Creation Drawer
-            VStack {
-                if viewModel.shouldShowCreationInterface {
-                    AddPlayerDrawer(creationDelegate: viewModel)
-                        .frame(alignment: .bottom)
-                        .edgesIgnoringSafeArea([.bottom])
-                        .transition(.move(edge: .bottom))
+                Spacer()
+                // Player Creation Drawer
+                VStack {
+                    if viewModel.shouldShowCreationInterface {
+                        AddPlayerDrawer(creationDelegate: viewModel)
+                            .edgesIgnoringSafeArea([.bottom])
+                            .frame(alignment: .bottom)
+                            .id("AddPlayerDrawer-Bottom")
+                            .transition(.move(edge: .bottom))
+                            .offset(x: 0, y: 280 - (viewModel.keyboardHeight / 2))
+                    }
                 }
+                .edgesIgnoringSafeArea([.bottom])
+                .frame(height: 240, alignment: .bottom)
             }
+            .frame(width: screen.size.width, height: screen.size.height, alignment: .top)
         }
-        .fullScreenCover(isPresented: $viewModel.shouldTransitionToPairing, content: { PlayerPairingCoordinator(rosterProvider: viewModel) })
+        .fullScreenCover(
+            isPresented: $viewModel.shouldTransitionToPairing,
+            content: { PlayerPairingCoordinator(rosterProvider: viewModel) }
+        )
     }
 
     // MARK: - Private Properties
 
     @ObservedObject private var viewModel: RosterListViewModel = .init()
-    @State private var viewDidAppear: Bool = false
 
-    private let pairingSceneFactory = PairingSceneLinkFactory()
-    private var screenWidth: CGFloat { Device.screen.width }
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+    }
 
     private func emptyState() -> some View {
         if viewModel.people.isEmpty {
@@ -74,10 +86,6 @@ struct RosterList: View {
         } else {
             return AnyView(Text(""))
         }
-    }
-
-    init() {
-        UITableView.appearance().backgroundColor = .clear
     }
 }
 
@@ -101,6 +109,16 @@ final class RosterListViewModel: ObservableObject {
 
     @Published var keyboardHeight: CGFloat = 0
 
+    private var cancellables: Set<AnyCancellable> = []
+
+    init() {
+        Publishers.keyboardHeight
+            .sink(receiveValue: { newHeight in
+                withAnimation { self.keyboardHeight = newHeight }
+        })
+        .store(in: &cancellables)
+    }
+
 }
 
 extension RosterListViewModel: RosterProvider { }
@@ -119,5 +137,21 @@ extension RosterListViewModel: PlayerCreationDelegate {
 extension Notification {
     var keyboardHeight: CGFloat {
         return (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height ?? 0
+    }
+}
+
+extension Publishers {
+    // 1.
+    static var keyboardHeight: AnyPublisher<CGFloat, Never> {
+        // 2.
+        let willShow = NotificationCenter.default.publisher(for: UIApplication.keyboardWillShowNotification)
+            .map { $0.keyboardHeight }
+
+        let willHide = NotificationCenter.default.publisher(for: UIApplication.keyboardWillHideNotification)
+            .map { _ in CGFloat(0) }
+
+        // 3.
+        return MergeMany(willShow, willHide)
+            .eraseToAnyPublisher()
     }
 }

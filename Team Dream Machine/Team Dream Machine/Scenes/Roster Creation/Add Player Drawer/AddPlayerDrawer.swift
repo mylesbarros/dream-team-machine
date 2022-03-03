@@ -48,7 +48,6 @@ struct AddPlayerDrawer: View {
             .frame(width: screenWidth, height: 44, alignment: .center)
             .padding(.init(top: 0, leading: 0, bottom: 32, trailing: 0))
         }
-        .ignoresSafeArea()
         .frame(width: screenWidth, height: 240, alignment: .center)
         .background(Color.blue)
         .cornerRadius(24, corners: [.topLeft, .topRight])
