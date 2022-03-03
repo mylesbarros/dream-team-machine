@@ -43,6 +43,7 @@ struct TeamResultsView: View {
 
     init(playerPreferences: [PlayerPairing]) {
         UITableView.appearance().backgroundColor = .clear
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: Color.TeamResults.title]
         viewModel = .init(playerPreferences: playerPreferences)
     }
 }
