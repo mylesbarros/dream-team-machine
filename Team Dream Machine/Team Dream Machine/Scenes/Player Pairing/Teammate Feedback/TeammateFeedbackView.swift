@@ -14,11 +14,12 @@ struct TeammateFeedbackView: View {
         VStack {
             Spacer()
                 .frame(width: screenWidth, height: 48, alignment: .center)
-            Text("How would you feel about being on a team with...")
+            Text("\(viewModel.player.name), how would you feel about being on a team with...")
+                .fontWeight(Font.Weight.medium)
+                .font(.system(size: 24))
                 .foregroundColor(.Feedback.topText)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
-                .font(.system(size: 24))
                 .padding(.init(top: 0, leading: 32, bottom: 8, trailing: 32))
             Spacer()
                 Text(viewModel.potentialTeammateName)
@@ -77,9 +78,10 @@ final class TeammateFeedbackViewModel: ObservableObject {
     @Published var potentialTeammateName: String
     @Published var teammateImageName: String
 
+    let player: Person
+
     private var currentTeammate: Person
 
-    private let player: Person
     private var potentialTeammates: [Person]
     private var feedback: [PlayerPairing] = []
 
