@@ -42,7 +42,8 @@ struct PlayerImageFactory {
             return "Loran"
         }
         else {
-            return "Unidentified"
+            let randomId: Int = .random(in: 1...4)
+            return "Unidentified\(randomId)"
         }
     }
 

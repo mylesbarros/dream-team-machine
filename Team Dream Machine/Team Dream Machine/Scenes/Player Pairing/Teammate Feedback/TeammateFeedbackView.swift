@@ -34,7 +34,7 @@ struct TeammateFeedbackView: View {
                 Image(viewModel.teammateImageName)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 212, height: 212, alignment: .center)
+                    .frame(width: 232, height: 232, alignment: .center)
                     .clipShape(Circle())
                     .transition(.scale)
                     .id("TeammateImage-\(viewModel.teammateImageName)")
