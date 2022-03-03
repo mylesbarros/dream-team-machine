@@ -49,7 +49,7 @@ struct AddPlayerDrawer: View {
             .padding(.init(top: 0, leading: 0, bottom: 32, trailing: 0))
         }
         .frame(width: screenWidth, height: 240, alignment: .center)
-        .background(Color.blue)
+        .background(Color.Roster.bottomDrawer)
         .cornerRadius(24, corners: [.topLeft, .topRight])
     }
 

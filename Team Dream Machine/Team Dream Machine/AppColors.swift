@@ -18,6 +18,8 @@ extension Color {
     enum Roster {
         static let rosterGradientTop = Color(hex: "E4EFE1")
         static let rosterGradientBottom = Color(hex: "CCD5FF")
+
+        static let bottomDrawer = Color.blue
     }
 
     // Pass the Phone Scene
