@@ -24,11 +24,11 @@ extension Color {
 
     // Pass the Phone Scene
     enum NewUser {
-        static let instructions = Color("ZestyBlue")
+        static let instructions = Color(hex: "232b2b")
         static let newUserName = Color("HotPink")
 
-        static let gradientTop = Color(hex: "E4EFE1")
-        static let gradientBottom = Color(hex: "CCD5FF")
+        static let gradientTop = Color(hex: "C3B1E1")
+        static let gradientBottom: Color = Color(hex: "DCFFFB")
     }
 
     // Feedback Input Scene

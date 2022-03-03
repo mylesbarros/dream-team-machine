@@ -34,14 +34,15 @@ struct PlayerImageFactory {
                     simplifiedName.contains("jan") {
             return "Honza"
         }
-        else if simplifiedName.contains("danya") {
+        else if simplifiedName.contains("danda") ||
+                    simplifiedName.contains("daniela") {
             return "Danya"
         }
         else if simplifiedName.contains("loran") {
             return "Loran"
         }
         else {
-            return "No image!"
+            return "Unidentified"
         }
     }
 

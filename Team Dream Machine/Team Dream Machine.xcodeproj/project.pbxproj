@@ -23,7 +23,6 @@
 		7CC5008927CE22F30024F77C /* PassThePhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008827CE22F30024F77C /* PassThePhoneViewModel.swift */; };
 		7CC5008C27CE23850024F77C /* TeammateFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008B27CE23850024F77C /* TeammateFeedbackView.swift */; };
 		7CC5008F27CE241D0024F77C /* InterestInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008E27CE241D0024F77C /* InterestInputView.swift */; };
-		7CC5009127CE4E520024F77C /* PairingSceneLinkFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009027CE4E520024F77C /* PairingSceneLinkFactory.swift */; };
 		7CC5009327CE4FFF0024F77C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009227CE4FFF0024F77C /* Person.swift */; };
 		7CC5009527CE6C380024F77C /* StripesShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009427CE6C380024F77C /* StripesShape.swift */; };
 		7CC5009827CE749D0024F77C /* TeamResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5009727CE749D0024F77C /* TeamResultsView.swift */; };
@@ -79,7 +78,6 @@
 		7CC5008827CE22F30024F77C /* PassThePhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThePhoneViewModel.swift; sourceTree = "<group>"; };
 		7CC5008B27CE23850024F77C /* TeammateFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeammateFeedbackView.swift; sourceTree = "<group>"; };
 		7CC5008E27CE241D0024F77C /* InterestInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestInputView.swift; sourceTree = "<group>"; };
-		7CC5009027CE4E520024F77C /* PairingSceneLinkFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingSceneLinkFactory.swift; sourceTree = "<group>"; };
 		7CC5009227CE4FFF0024F77C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7CC5009427CE6C380024F77C /* StripesShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StripesShape.swift; sourceTree = "<group>"; };
 		7CC5009727CE749D0024F77C /* TeamResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultsView.swift; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 			children = (
 				7CD8BB6A27CAF42500F09132 /* Add Player Drawer */,
 				7CD8BB6527CAE48300F09132 /* RosterList.swift */,
-				7CC5009027CE4E520024F77C /* PairingSceneLinkFactory.swift */,
 			);
 			path = "Roster Creation";
 			sourceTree = "<group>";
@@ -473,7 +470,6 @@
 				7C553B2C27CFD78D00A9C52C /* TeamResultsViewModel.swift in Sources */,
 				7CC5009527CE6C380024F77C /* StripesShape.swift in Sources */,
 				7CC5009A27CE76D80024F77C /* TeamView.swift in Sources */,
-				7CC5009127CE4E520024F77C /* PairingSceneLinkFactory.swift in Sources */,
 				7CD8BB7027CAF49900F09132 /* PassThePhoneView.swift in Sources */,
 				7C9CE7CD27CFCE2A007C38D8 /* OnAnimationComplete.swift in Sources */,
 				7CC5008F27CE241D0024F77C /* InterestInputView.swift in Sources */,
