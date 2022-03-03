@@ -97,6 +97,7 @@ struct WelcomeView: View {
                             .font(.custom("KirbyClassic", size: 24))
                             .fontWeight(.bold)
                             .id("TapToContinueLabelText")
+                            .foregroundColor(Color(hex: "DB9065"))
                         Spacer()
                     }
                 }
@@ -126,7 +127,7 @@ final class WelcomeViewModel: ObservableObject {
     @Published var navigateToRosterList: Bool = false
 
     init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 6, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             withAnimation { self.showTapToContinue = true }
         })
     }

@@ -42,7 +42,9 @@ extension Color {
 
     // Final Results Scene
     enum TeamResults {
-        static let gradientTop = Color(hex: "F6F5AE")
-        static let gradientBottom = Color(hex: "FFD1BA")
+        static let gradientTop = Color(hex: "E4FFE1")
+        static let gradientBottom = Color(hex: "FFE8C2")
+        
+        static let title: UIColor = .init(Color(hex: "485855"))
     }
 }
