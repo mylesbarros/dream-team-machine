@@ -16,8 +16,11 @@ struct RosterList: View {
         GeometryReader { screen in
             ZStack {
                 NavigationView {
-                    List(viewModel.people) { person in
-                        Text(person.name)
+                    List {
+                        ForEach(viewModel.people, id: \.self) { player in
+                            Text(player.name)
+                        }
+                        .onDelete(perform: viewModel.remove)
                     }
                     .animation(.easeInOut)
                     .background(LinearGradient(
@@ -104,6 +107,7 @@ final class RosterListViewModel: ObservableObject {
         .init(name: "Adam"),
         .init(name: "Anička")
     ]
+
     @Published var shouldShowCreationInterface: Bool = false
     @Published var shouldTransitionToPairing: Bool = false
 
@@ -119,9 +123,11 @@ final class RosterListViewModel: ObservableObject {
         .store(in: &cancellables)
     }
 
-}
+    func remove(at offsets: IndexSet) {
+        people.remove(atOffsets: offsets)
+    }
 
-extension RosterListViewModel: RosterProvider { }
+}
 
 extension RosterListViewModel: PlayerCreationDelegate {
     func newPlayerCreated(name: String) {
@@ -134,24 +140,4 @@ extension RosterListViewModel: PlayerCreationDelegate {
     }
 }
 
-extension Notification {
-    var keyboardHeight: CGFloat {
-        return (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height ?? 0
-    }
-}
-
-extension Publishers {
-    // 1.
-    static var keyboardHeight: AnyPublisher<CGFloat, Never> {
-        // 2.
-        let willShow = NotificationCenter.default.publisher(for: UIApplication.keyboardWillShowNotification)
-            .map { $0.keyboardHeight }
-
-        let willHide = NotificationCenter.default.publisher(for: UIApplication.keyboardWillHideNotification)
-            .map { _ in CGFloat(0) }
-
-        // 3.
-        return MergeMany(willShow, willHide)
-            .eraseToAnyPublisher()
-    }
-}
+extension RosterListViewModel: RosterProvider { }
