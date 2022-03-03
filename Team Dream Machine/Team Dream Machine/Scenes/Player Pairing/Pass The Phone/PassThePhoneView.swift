@@ -16,12 +16,12 @@ struct PassThePhoneView: View {
             Spacer()
                 .frame(width: screenWidth, height: 48, alignment: .center)
             Text(viewModel.isFirstUser ? "Let's get started!" : "You're done!")
-                .foregroundColor(.textPrimary)
+                .foregroundColor(.NewUser.instructions)
                 .font(.title2)
             Spacer()
                 .frame(width: screenWidth, height: 16, alignment: .center)
             Text("Please pass the phone to")
-                .foregroundColor(.textPrimary)
+                .foregroundColor(.NewUser.instructions)
                 .font(.title3)
             Spacer()
                 .frame(width: screenWidth, height: 8, alignment: .center)
@@ -30,7 +30,7 @@ struct PassThePhoneView: View {
                     .font(.largeTitle)
                 Text("\(viewModel.intendedUser.name)")
                     .font(.largeTitle)
-                    .foregroundColor(.textName)
+                    .foregroundColor(.NewUser.newUserName)
                     .id("AnimatedActiveUser-\(viewModel.intendedUser.name)")
                     .rainbowAnimation()
                 Text(" ✨")
@@ -49,8 +49,8 @@ struct PassThePhoneView: View {
         }
         .background(LinearGradient(
             gradient: Gradient(colors: [
-                .init(hex: "E4FFE1"),
-                .init(hex: "CCD5FF")
+                .NewUser.gradientTop,
+                .NewUser.gradientBottom
             ]),
             startPoint: .top,
             endPoint: .bottom

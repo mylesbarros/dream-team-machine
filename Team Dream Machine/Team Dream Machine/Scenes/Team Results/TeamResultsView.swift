@@ -24,7 +24,14 @@ struct TeamResultsView: View {
                     }
                 }
             }
-            .background(Color.background)
+            .background(LinearGradient(
+                gradient: Gradient(colors: [
+                    .TeamResults.gradientTop,
+                    .TeamResults.gradientBottom
+                ]),
+                startPoint: .top,
+                endPoint: .bottom
+            ))
             .navigationTitle("✨ Dream Teams ✨")
             .onAppear(perform: {
                 viewModel.processResults()

@@ -108,7 +108,7 @@ struct WelcomeView: View {
                 }))
             }
             .background(LinearGradient(
-                gradient: Gradient(colors: [.sky, .white]),
+                gradient: Gradient(colors: [.Welcome.sky, .white]),
                 startPoint: .top,
                 endPoint: .bottom
             ))

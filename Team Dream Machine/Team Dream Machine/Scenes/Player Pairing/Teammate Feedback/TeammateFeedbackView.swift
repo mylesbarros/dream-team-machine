@@ -5,7 +5,6 @@
 //  Created by Myles Barros on 01.03.2022.
 //
 
-import Animalese_Swift
 import AVFoundation
 import SwiftUI
 
@@ -16,14 +15,14 @@ struct TeammateFeedbackView: View {
             Spacer()
                 .frame(width: screenWidth, height: 48, alignment: .center)
             Text("How would you feel about being on a team with...")
-                .foregroundColor(.init(hex: "#581F18"))
+                .foregroundColor(.Feedback.topText)
                 .lineLimit(nil)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 24))
                 .padding(.init(top: 0, leading: 32, bottom: 8, trailing: 32))
             Spacer()
                 Text(viewModel.potentialTeammateName)
-                .foregroundColor(.init(hex: "#E06C9F"))
+                .foregroundColor(.Feedback.nameText)
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .frame(width: screenWidth, height: 52, alignment: .center)
@@ -45,8 +44,8 @@ struct TeammateFeedbackView: View {
         }
         .background(LinearGradient(
             gradient: Gradient(colors: [
-                .init(hex: "F6F5AE"),
-                .init(hex: "FFD1BA")
+                .Feedback.gradientTop,
+                .Feedback.gradientBottom
             ]),
             startPoint: .top,
             endPoint: .bottom

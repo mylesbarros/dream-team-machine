@@ -34,7 +34,7 @@ struct PlayerPairingCoordinator: View {
                 }
             }
         }
-        .background(Color.background)
+        .background(Color.clear)
         .transition(.backslide)
         .onAppear(perform: {
             viewModel.sceneIsActive()

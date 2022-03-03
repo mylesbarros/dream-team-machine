@@ -8,10 +8,39 @@
 import SwiftUI
 
 extension Color {
-    static let background = Color("SoftPink")
-    static let textPrimary = Color("ZestyBlue")
-    static let textName = Color("HotPink")
-    static let secondaryBackground = Color("SageGreen")
 
-    static let sky = Color("SkyBlue")
+    // Welcome Scene
+    enum Welcome {
+        static let sky = Color("SkyBlue")
+    }
+
+    // Roster List
+    enum Roster {
+        static let rosterGradientTop = Color(hex: "E4EFE1")
+        static let rosterGradientBottom = Color(hex: "CCD5FF")
+    }
+
+    // Pass the Phone Scene
+    enum NewUser {
+        static let instructions = Color("ZestyBlue")
+        static let newUserName = Color("HotPink")
+
+        static let gradientTop = Color(hex: "E4EFE1")
+        static let gradientBottom = Color(hex: "CCD5FF")
+    }
+
+    // Feedback Input Scene
+    enum Feedback {
+        static let topText = Color(hex: "581F18")
+        static let nameText = Color(hex: "#E06C9F")
+
+        static let gradientTop = Color(hex: "F6F5AE")
+        static let gradientBottom = Color(hex: "FFD1BA")
+    }
+
+    // Final Results Scene
+    enum TeamResults {
+        static let gradientTop = Color(hex: "F6F5AE")
+        static let gradientBottom = Color(hex: "FFD1BA")
+    }
 }

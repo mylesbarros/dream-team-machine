@@ -17,24 +17,18 @@ struct RosterList: View {
                 List(viewModel.people) { person in
                     Text(person.name)
                 }
+                .animation(.easeInOut)
                 .background(LinearGradient(
                     gradient: Gradient(colors: [
-                        .init(hex: "E4EFE1"),
-                        .init(hex: "CCD5FF")
+                        .Roster.rosterGradientTop,
+                        .Roster.rosterGradientBottom
                     ]),
                     startPoint: .top,
                     endPoint: .bottom
                 ))
-                .animation(.easeInOut)
-                // Empty State
                 .overlay(Group {
-                    if viewModel.people.isEmpty {
-                        Text("You don't have any players.\nNo time like the present to add some!")
-                            .foregroundColor(.textPrimary)
-                            .multilineTextAlignment(.center)
-                    }
-                }
-                )
+                    emptyState()
+                })
                 // Navigation Bar
                 .navigationTitle("Player Roster 🧢")
                 .toolbar {
@@ -71,6 +65,16 @@ struct RosterList: View {
 
     private let pairingSceneFactory = PairingSceneLinkFactory()
     private var screenWidth: CGFloat { Device.screen.width }
+
+    private func emptyState() -> some View {
+        if viewModel.people.isEmpty {
+            return AnyView(Text("You don't have any players.\nNo time like the present to add some!")
+                .foregroundColor(Color.black)
+                .multilineTextAlignment(.center))
+        } else {
+            return AnyView(Text(""))
+        }
+    }
 
     init() {
         UITableView.appearance().backgroundColor = .clear

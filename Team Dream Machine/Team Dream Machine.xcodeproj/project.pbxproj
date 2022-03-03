@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		061727E427CA777D00CE8931 /* TeamResolver in Frameworks */ = {isa = PBXBuildFile; productRef = 061727E327CA777D00CE8931 /* TeamResolver */; };
 		7C24903227D01E010031FA13 /* PlayerImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24903127D01E010031FA13 /* PlayerImageFactory.swift */; };
-		7C269E9627D0C34A00AB3B2B /* Animalese-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C269E9527D0C34A00AB3B2B /* Animalese-Swift */; };
 		7C269E9827D0D6AD00AB3B2B /* PlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C269E9727D0D6AD00AB3B2B /* PlaneView.swift */; };
 		7C553B2C27CFD78D00A9C52C /* TeamResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C553B2B27CFD78D00A9C52C /* TeamResultsViewModel.swift */; };
 		7C553B3027CFFF9300A9C52C /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C553B2F27CFFF9300A9C52C /* ColorPickerView.swift */; };
@@ -111,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C269E9627D0C34A00AB3B2B /* Animalese-Swift in Frameworks */,
 				061727E427CA777D00CE8931 /* TeamResolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,7 +331,6 @@
 			name = "Team Dream Machine";
 			packageProductDependencies = (
 				061727E327CA777D00CE8931 /* TeamResolver */,
-				7C269E9527D0C34A00AB3B2B /* Animalese-Swift */,
 			);
 			productName = "Team Dream Machine";
 			productReference = 7CD809AF27CA6283003F8702 /* Team Dream Machine.app */;
@@ -408,7 +405,6 @@
 			);
 			mainGroup = 7CD809A627CA6283003F8702;
 			packageReferences = (
-				7C269E9427D0C34A00AB3B2B /* XCRemoteSwiftPackageReference "animalese-swift" */,
 			);
 			productRefGroup = 7CD809B027CA6283003F8702 /* Products */;
 			projectDirPath = "";
@@ -835,26 +831,10 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		7C269E9427D0C34A00AB3B2B /* XCRemoteSwiftPackageReference "animalese-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/jakubpetrik/animalese-swift.git";
-			requirement = {
-				kind = exactVersion;
-				version = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		061727E327CA777D00CE8931 /* TeamResolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TeamResolver;
-		};
-		7C269E9527D0C34A00AB3B2B /* Animalese-Swift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 7C269E9427D0C34A00AB3B2B /* XCRemoteSwiftPackageReference "animalese-swift" */;
-			productName = "Animalese-Swift";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
