@@ -103,15 +103,16 @@ struct WelcomeView: View {
                 .id("BottomTapStack")
                 .frame(height: 100, alignment: .bottom)
                 .transition(.opacity)
-                .gesture(TapGesture().onEnded({
-                    self.viewModel.navigateToRosterList = true
-                }))
             }
             .background(LinearGradient(
                 gradient: Gradient(colors: [.Welcome.sky, .white]),
                 startPoint: .top,
                 endPoint: .bottom
             ))
+            .gesture(TapGesture().onEnded({
+                guard viewModel.showTapToContinue else { return }
+                self.viewModel.navigateToRosterList = true
+            }))
         }
         .fullScreenCover(isPresented: $viewModel.navigateToRosterList, content: { RosterList() })
     }
