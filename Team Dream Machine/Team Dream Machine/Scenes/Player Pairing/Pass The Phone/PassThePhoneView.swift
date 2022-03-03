@@ -47,7 +47,14 @@ struct PassThePhoneView: View {
             Spacer()
                 .frame(width: screenWidth, height: 32, alignment: .center)
         }
-        .background(Color.background)
+        .background(LinearGradient(
+            gradient: Gradient(colors: [
+                .init(hex: "E4FFE1"),
+                .init(hex: "CCD5FF")
+            ]),
+            startPoint: .top,
+            endPoint: .bottom
+        ))
     }
 
     // MARK: - Private Properties

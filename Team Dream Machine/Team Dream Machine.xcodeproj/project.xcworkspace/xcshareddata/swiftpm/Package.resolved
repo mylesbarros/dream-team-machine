@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Animalese-Swift",
+        "repositoryURL": "https://github.com/jakubpetrik/animalese-swift.git",
+        "state": {
+          "branch": null,
+          "revision": "eb7b3c7e78e3e51af3c2ff4f78f762258fd4b7f2",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

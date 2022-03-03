@@ -35,15 +35,24 @@ extension View {
 struct RainbowAnimation: ViewModifier {
 
     @State var isOn: Bool = false
-    let hueColors: [Color] = stride(from: 0, to: 1, by: 0.01).map {
-        Color(hue: $0, saturation: 1, brightness: 1)
-    }
+    let hueColors: [Color]
 
-    var duration: Double = 4
+    var duration: Double
     var animation: Animation {
         Animation
             .linear(duration: duration)
             .repeatForever(autoreverses: false)
+    }
+
+    init(duration: Double, hueColors: [Color] = []) {
+        self.duration = duration
+        if hueColors.isEmpty {
+            self.hueColors = stride(from: 0, to: 1, by: 0.01).map {
+                Color(hue: $0, saturation: 1, brightness: 1)
+            }
+        } else {
+            self.hueColors = hueColors
+        }
     }
 
     func body(content: Content) -> some View {
@@ -52,7 +61,7 @@ struct RainbowAnimation: ViewModifier {
             ZStack {
                 gradient
                     .frame(width: 2 * proxy.size.width)
-                    .offset(x: self.isOn ? -proxy.size.width / 2 : proxy.size.width / 2)
+                    .offset(x: self.isOn ? -proxy.size.width : 0)
             }
         })
         .onAppear {
@@ -65,8 +74,8 @@ struct RainbowAnimation: ViewModifier {
 }
 
 extension View {
-    func rainbowAnimation() -> some View {
-        self.modifier(RainbowAnimation())
+    func rainbowAnimation(duration: Double = 4, colors: [Color] = []) -> some View {
+        self.modifier(RainbowAnimation(duration: duration, hueColors: colors))
     }
 }
 

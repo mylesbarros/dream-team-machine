@@ -17,6 +17,14 @@ struct RosterList: View {
                 List(viewModel.people) { person in
                     Text(person.name)
                 }
+                .background(LinearGradient(
+                    gradient: Gradient(colors: [
+                        .init(hex: "E4EFE1"),
+                        .init(hex: "CCD5FF")
+                    ]),
+                    startPoint: .top,
+                    endPoint: .bottom
+                ))
                 .animation(.easeInOut)
                 // Empty State
                 .overlay(Group {
@@ -47,12 +55,11 @@ struct RosterList: View {
             VStack {
                 if viewModel.shouldShowCreationInterface {
                     AddPlayerDrawer(creationDelegate: viewModel)
-                        .frame(maxHeight: .infinity, alignment: .bottom)
+                        .frame(alignment: .bottom)
                         .edgesIgnoringSafeArea([.bottom])
                         .transition(.move(edge: .bottom))
                 }
             }
-            .animation(.easeOut(duration: 0.34))
         }
         .fullScreenCover(isPresented: $viewModel.shouldTransitionToPairing, content: { PlayerPairingCoordinator(rosterProvider: viewModel) })
     }
@@ -64,6 +71,10 @@ struct RosterList: View {
 
     private let pairingSceneFactory = PairingSceneLinkFactory()
     private var screenWidth: CGFloat { Device.screen.width }
+
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+    }
 }
 
 final class RosterListViewModel: ObservableObject {
@@ -74,10 +85,17 @@ final class RosterListViewModel: ObservableObject {
         .init(name: "Kaja"),
         .init(name: "Myles"),
         .init(name: "Nora"),
-        .init(name: "Xanthe")
+        .init(name: "Xanthe"),
+        .init(name: "Danya"),
+        .init(name: "Loran"),
+        .init(name: "Honza"),
+        .init(name: "Adam"),
+        .init(name: "Anička")
     ]
     @Published var shouldShowCreationInterface: Bool = false
     @Published var shouldTransitionToPairing: Bool = false
+
+    @Published var keyboardHeight: CGFloat = 0
 
 }
 
@@ -91,5 +109,11 @@ extension RosterListViewModel: PlayerCreationDelegate {
 
     func userRequestedToClosePlayerCreation() {
         withAnimation { shouldShowCreationInterface = false }
+    }
+}
+
+extension Notification {
+    var keyboardHeight: CGFloat {
+        return (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height ?? 0
     }
 }

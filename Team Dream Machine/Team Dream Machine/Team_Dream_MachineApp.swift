@@ -12,7 +12,7 @@ import TeamResolver
 struct Team_Dream_MachineApp: App {
     var body: some Scene {
         WindowGroup {
-            ColorPickerView()
+            WelcomeView()
         }
     }
 }

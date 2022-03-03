@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		061727E427CA777D00CE8931 /* TeamResolver in Frameworks */ = {isa = PBXBuildFile; productRef = 061727E327CA777D00CE8931 /* TeamResolver */; };
+		7C24903227D01E010031FA13 /* PlayerImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24903127D01E010031FA13 /* PlayerImageFactory.swift */; };
+		7C269E9627D0C34A00AB3B2B /* Animalese-Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C269E9527D0C34A00AB3B2B /* Animalese-Swift */; };
+		7C269E9827D0D6AD00AB3B2B /* PlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C269E9727D0D6AD00AB3B2B /* PlaneView.swift */; };
 		7C553B2C27CFD78D00A9C52C /* TeamResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C553B2B27CFD78D00A9C52C /* TeamResultsViewModel.swift */; };
 		7C553B3027CFFF9300A9C52C /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C553B2F27CFFF9300A9C52C /* ColorPickerView.swift */; };
 		7C9CE7CB27CFC75D007C38D8 /* CloudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */; };
@@ -35,7 +38,6 @@
 		7CD8BB6E27CAF45300F09132 /* View+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8BB6D27CAF45300F09132 /* View+RoundedCorners.swift */; };
 		7CD8BB7027CAF49900F09132 /* PassThePhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8BB6F27CAF49900F09132 /* PassThePhoneView.swift */; };
 		7CD8BB7227CAF5E000F09132 /* PlayerIntersectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8BB7127CAF5E000F09132 /* PlayerIntersectionModel.swift */; };
-		7CD8BB7427CAF61100F09132 /* PlayerFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8BB7327CAF61100F09132 /* PlayerFeedbackView.swift */; };
 		7CF7B9BA27CF86510051144A /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF7B9B927CF86510051144A /* WelcomeView.swift */; };
 		7CF7B9C227CF88A60051144A /* BubbleLemonB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF7B9BD27CF88A60051144A /* BubbleLemonB.ttf */; };
 		7CF7B9C527CF88A60051144A /* BubbleLemonA.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CF7B9C127CF88A60051144A /* BubbleLemonA.ttf */; };
@@ -62,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C24903127D01E010031FA13 /* PlayerImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImageFactory.swift; sourceTree = "<group>"; };
+		7C269E9727D0D6AD00AB3B2B /* PlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneView.swift; sourceTree = "<group>"; };
 		7C553B2B27CFD78D00A9C52C /* TeamResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamResultsViewModel.swift; sourceTree = "<group>"; };
 		7C553B2F27CFFF9300A9C52C /* ColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudView.swift; sourceTree = "<group>"; };
@@ -93,7 +97,6 @@
 		7CD8BB6D27CAF45300F09132 /* View+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+RoundedCorners.swift"; sourceTree = "<group>"; };
 		7CD8BB6F27CAF49900F09132 /* PassThePhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThePhoneView.swift; sourceTree = "<group>"; };
 		7CD8BB7127CAF5E000F09132 /* PlayerIntersectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntersectionModel.swift; sourceTree = "<group>"; };
-		7CD8BB7327CAF61100F09132 /* PlayerFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerFeedbackView.swift; sourceTree = "<group>"; };
 		7CF7B9B927CF86510051144A /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		7CF7B9BD27CF88A60051144A /* BubbleLemonB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BubbleLemonB.ttf; sourceTree = "<group>"; };
 		7CF7B9C127CF88A60051144A /* BubbleLemonA.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BubbleLemonA.ttf; sourceTree = "<group>"; };
@@ -108,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C269E9627D0C34A00AB3B2B /* Animalese-Swift in Frameworks */,
 				061727E427CA777D00CE8931 /* TeamResolver in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,7 +175,6 @@
 			children = (
 				7CC5008127CE185A0024F77C /* Rainbow.swift */,
 				7CC5009427CE6C380024F77C /* StripesShape.swift */,
-				7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */,
 				7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */,
 			);
 			path = "Accessory Views";
@@ -190,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				7CC5008B27CE23850024F77C /* TeammateFeedbackView.swift */,
+				7C24903127D01E010031FA13 /* PlayerImageFactory.swift */,
 			);
 			path = "Teammate Feedback";
 			sourceTree = "<group>";
@@ -275,7 +279,6 @@
 				7CC5008327CE19F20024F77C /* Pass The Phone */,
 				7CC5007A27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift */,
 				7CD8BB7127CAF5E000F09132 /* PlayerIntersectionModel.swift */,
-				7CD8BB7327CAF61100F09132 /* PlayerFeedbackView.swift */,
 				7CC5008627CE21300024F77C /* PairingInstructionsView.swift */,
 			);
 			path = "Player Pairing";
@@ -293,7 +296,9 @@
 		7CF7B9B827CF86410051144A /* Welcome Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7C9CE7CA27CFC75D007C38D8 /* CloudView.swift */,
 				7CF7B9B927CF86510051144A /* WelcomeView.swift */,
+				7C269E9727D0D6AD00AB3B2B /* PlaneView.swift */,
 			);
 			path = "Welcome Scene";
 			sourceTree = "<group>";
@@ -328,6 +333,7 @@
 			name = "Team Dream Machine";
 			packageProductDependencies = (
 				061727E327CA777D00CE8931 /* TeamResolver */,
+				7C269E9527D0C34A00AB3B2B /* Animalese-Swift */,
 			);
 			productName = "Team Dream Machine";
 			productReference = 7CD809AF27CA6283003F8702 /* Team Dream Machine.app */;
@@ -402,6 +408,7 @@
 			);
 			mainGroup = 7CD809A627CA6283003F8702;
 			packageReferences = (
+				7C269E9427D0C34A00AB3B2B /* XCRemoteSwiftPackageReference "animalese-swift" */,
 			);
 			productRefGroup = 7CD809B027CA6283003F8702 /* Products */;
 			projectDirPath = "";
@@ -453,9 +460,9 @@
 				7CC5007F27CE179B0024F77C /* Device.swift in Sources */,
 				7CC5008C27CE23850024F77C /* TeammateFeedbackView.swift in Sources */,
 				7CC5007B27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift in Sources */,
-				7CD8BB7427CAF61100F09132 /* PlayerFeedbackView.swift in Sources */,
 				7CC5008927CE22F30024F77C /* PassThePhoneViewModel.swift in Sources */,
 				7CD8BB6627CAE48300F09132 /* RosterList.swift in Sources */,
+				7C269E9827D0D6AD00AB3B2B /* PlaneView.swift in Sources */,
 				7C553B2C27CFD78D00A9C52C /* TeamResultsViewModel.swift in Sources */,
 				7CC5009527CE6C380024F77C /* StripesShape.swift in Sources */,
 				7CC5009A27CE76D80024F77C /* TeamView.swift in Sources */,
@@ -469,6 +476,7 @@
 				7C9CE7CB27CFC75D007C38D8 /* CloudView.swift in Sources */,
 				7CC5008227CE185A0024F77C /* Rainbow.swift in Sources */,
 				7CD8BB6C27CAF43700F09132 /* AddPlayerViewModel.swift in Sources */,
+				7C24903227D01E010031FA13 /* PlayerImageFactory.swift in Sources */,
 				7CD809B327CA6283003F8702 /* Team_Dream_MachineApp.swift in Sources */,
 				7CC5009327CE4FFF0024F77C /* Person.swift in Sources */,
 				7CF7B9BA27CF86510051144A /* WelcomeView.swift in Sources */,
@@ -634,7 +642,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Team Dream Machine/Preview Content\"";
-				DEVELOPMENT_TEAM = 2Q6F352S9S;
+				DEVELOPMENT_TEAM = BD3YL53XT4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Team-Dream-Machine-Info.plist";
@@ -643,13 +651,14 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "wrike.Team-Dream-Machine";
+				PRODUCT_BUNDLE_IDENTIFIER = barros.swiftui.experiment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -665,7 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Team Dream Machine/Preview Content\"";
-				DEVELOPMENT_TEAM = 2Q6F352S9S;
+				DEVELOPMENT_TEAM = BD3YL53XT4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Team-Dream-Machine-Info.plist";
@@ -674,13 +683,14 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "wrike.Team-Dream-Machine";
+				PRODUCT_BUNDLE_IDENTIFIER = barros.swiftui.experiment;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -825,10 +835,26 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		7C269E9427D0C34A00AB3B2B /* XCRemoteSwiftPackageReference "animalese-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jakubpetrik/animalese-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		061727E327CA777D00CE8931 /* TeamResolver */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = TeamResolver;
+		};
+		7C269E9527D0C34A00AB3B2B /* Animalese-Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C269E9427D0C34A00AB3B2B /* XCRemoteSwiftPackageReference "animalese-swift" */;
+			productName = "Animalese-Swift";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
