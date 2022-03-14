@@ -19,12 +19,12 @@ extension Color {
         static let rosterGradientTop = Color(hex: "E4EFE1")
         static let rosterGradientBottom = Color(hex: "CCD5FF")
 
-        static let bottomDrawer = Color.blue
+        static let bottomDrawer = Color(hex: "F8C8DC")
     }
 
     // Pass the Phone Scene
     enum NewUser {
-        static let instructions = Color(hex: "232b2b")
+        static let instructions = Color.blue
         static let newUserName = Color("HotPink")
 
         static let gradientTop = Color(hex: "C3B1E1")

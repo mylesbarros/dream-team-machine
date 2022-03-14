@@ -32,14 +32,14 @@ struct AddPlayerDrawer: View {
                 Button(action: { viewModel.userDidTapToClose() }, label: {
                     Text("Close")
                         .fontWeight(.medium)
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.white)
                 })
                 .frame(width: 54, height: 44, alignment: .leading)
                 Spacer()
                 Button(action: { viewModel.userDidTapToAddPlayer() }, label: {
                     Text("Add")
                         .fontWeight(.medium)
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.white)
                 })
                 .frame(width: 54, height: 44, alignment: .trailing)
                 Spacer()
@@ -65,5 +65,4 @@ struct AddPlayerDrawer: View {
         viewModel = .init(delegate: creationDelegate)
     }
 }
-
 

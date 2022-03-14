@@ -31,9 +31,7 @@ struct RosterList: View {
                         startPoint: .top,
                         endPoint: .bottom
                     ))
-                    .overlay(Group {
-                        emptyState()
-                    })
+                    .overlay(Group { emptyState() })
                     // Navigation Bar
                     .navigationTitle("Player Roster 🧢")
                     .toolbar {
@@ -42,6 +40,7 @@ struct RosterList: View {
                                 viewModel.shouldShowCreationInterface = false
                                 viewModel.shouldTransitionToPairing = true
                             }
+                            .disabled(viewModel.tooFewPlayersToFormTeams)
                         })
                         ToolbarItem(placement: .bottomBar, content: {
                             Button("Add New Players") {
@@ -78,14 +77,19 @@ struct RosterList: View {
     @ObservedObject private var viewModel: RosterListViewModel = .init()
 
     init() {
+        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: Color.TeamResults.title]
         UITableView.appearance().backgroundColor = .clear
     }
 
     private func emptyState() -> some View {
         if viewModel.people.isEmpty {
-            return AnyView(Text("You don't have any players.\nNo time like the present to add some!")
-                .foregroundColor(Color.black)
-                .multilineTextAlignment(.center))
+            return AnyView(
+                Text("You don't have any players.\nNo time like the present to add some!")
+                    .foregroundColor(Color.blue)
+                    .font(.title3)
+                    .fontWeight(.medium)
+                    .multilineTextAlignment(.center)
+            )
         } else {
             return AnyView(Text(""))
         }
@@ -96,18 +100,9 @@ final class RosterListViewModel: ObservableObject {
 
     // MARK: - Public Properties
 
-    @Published var people: [Person] = [
-        .init(name: "Kaja"),
-        .init(name: "Myles"),
-        .init(name: "Nora"),
-        .init(name: "Xanthe"),
-        .init(name: "Danya"),
-        .init(name: "Loran"),
-        .init(name: "Honza"),
-        .init(name: "Adam"),
-        .init(name: "Anička")
-    ]
+    @Published var people: [Person] = []
 
+    var tooFewPlayersToFormTeams: Bool { people.count <= 4 }
     @Published var shouldShowCreationInterface: Bool = false
     @Published var shouldTransitionToPairing: Bool = false
 
@@ -132,7 +127,7 @@ final class RosterListViewModel: ObservableObject {
 extension RosterListViewModel: PlayerCreationDelegate {
     func newPlayerCreated(name: String) {
         let newPlayer = Person(name: name)
-        people.append(newPlayer)
+        people.insert(newPlayer, at: 0)
     }
 
     func userRequestedToClosePlayerCreation() {

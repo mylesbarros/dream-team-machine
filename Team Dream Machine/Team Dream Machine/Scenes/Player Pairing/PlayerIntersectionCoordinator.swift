@@ -16,10 +16,7 @@ struct PlayerPairingCoordinator: View {
         ZStack {
             if !didAppear { EmptyView() }
             else {
-                if viewModel.doneGatheringFeedback {
-                    TeamResultsView(playerPreferences: viewModel.pairings)
-                }
-                else if !viewModel.doesPlayerHaveThePhone {
+                if !viewModel.doesPlayerHaveThePhone {
                     PassThePhoneView(
                         nextPlayerGivingFeedback: viewModel.playerGivingFeedback!,
                         isFirstUser: viewModel.isFirstUser,
@@ -40,6 +37,10 @@ struct PlayerPairingCoordinator: View {
             viewModel.sceneIsActive()
             self.didAppear = true
         })
+        .fullScreenCover(
+            isPresented: $viewModel.doneGatheringFeedback,
+            content: { TeamResultsView(playerPreferences: viewModel.pairings) }
+        )
     }
 
     @ObservedObject var viewModel: PlayerPairingCoordinatorViewModel

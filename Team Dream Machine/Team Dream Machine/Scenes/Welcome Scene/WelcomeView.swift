@@ -127,7 +127,7 @@ final class WelcomeViewModel: ObservableObject {
     @Published var navigateToRosterList: Bool = false
 
     init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: {
             withAnimation { self.showTapToContinue = true }
         })
     }

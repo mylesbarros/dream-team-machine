@@ -30,13 +30,16 @@ struct PassThePhoneView: View {
             HStack {
                 Text("✨ ")
                     .font(.largeTitle)
+                    .fontWeight(Font.Weight.bold)
                 Text("\(viewModel.intendedUser.name)")
                     .font(.largeTitle)
+                    .fontWeight(Font.Weight.bold)
                     .foregroundColor(.NewUser.newUserName)
                     .id("AnimatedActiveUser-\(viewModel.intendedUser.name)")
                     .rainbowAnimation()
                 Text(" ✨")
                     .font(.largeTitle)
+                    .fontWeight(Font.Weight.bold)
             }
             Spacer()
             Button(
