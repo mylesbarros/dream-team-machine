@@ -16,7 +16,7 @@ struct PlayerIntersectionModel {
 
 enum PairingInterestLevel: String, CaseIterable {
     case 😬
-    case 😐
+    case 🙂
     case 😃
     case 😍
 }

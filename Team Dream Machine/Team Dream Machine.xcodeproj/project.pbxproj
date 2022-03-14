@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		061727E427CA777D00CE8931 /* TeamResolver in Frameworks */ = {isa = PBXBuildFile; productRef = 061727E327CA777D00CE8931 /* TeamResolver */; };
+		7C1867B827DFD88300632DAC /* PlayerIntersectionCoordinatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1867B727DFD88300632DAC /* PlayerIntersectionCoordinatorViewModel.swift */; };
+		7C1867BA27DFD90D00632DAC /* BackslideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C1867B927DFD90D00632DAC /* BackslideTransition.swift */; };
 		7C24903227D01E010031FA13 /* PlayerImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C24903127D01E010031FA13 /* PlayerImageFactory.swift */; };
 		7C269E9827D0D6AD00AB3B2B /* PlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C269E9727D0D6AD00AB3B2B /* PlaneView.swift */; };
 		7C269E9E27D0FDFE00AB3B2B /* Publishers+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C269E9D27D0FDFE00AB3B2B /* Publishers+Keyboard.swift */; };
@@ -19,7 +21,6 @@
 		7CC5007B27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5007A27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift */; };
 		7CC5007F27CE179B0024F77C /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5007E27CE179B0024F77C /* Device.swift */; };
 		7CC5008227CE185A0024F77C /* Rainbow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008127CE185A0024F77C /* Rainbow.swift */; };
-		7CC5008727CE21300024F77C /* PairingInstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008627CE21300024F77C /* PairingInstructionsView.swift */; };
 		7CC5008927CE22F30024F77C /* PassThePhoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008827CE22F30024F77C /* PassThePhoneViewModel.swift */; };
 		7CC5008C27CE23850024F77C /* TeammateFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008B27CE23850024F77C /* TeammateFeedbackView.swift */; };
 		7CC5008F27CE241D0024F77C /* InterestInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC5008E27CE241D0024F77C /* InterestInputView.swift */; };
@@ -63,6 +64,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C1867B727DFD88300632DAC /* PlayerIntersectionCoordinatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntersectionCoordinatorViewModel.swift; sourceTree = "<group>"; };
+		7C1867B927DFD90D00632DAC /* BackslideTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackslideTransition.swift; sourceTree = "<group>"; };
 		7C24903127D01E010031FA13 /* PlayerImageFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerImageFactory.swift; sourceTree = "<group>"; };
 		7C269E9727D0D6AD00AB3B2B /* PlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneView.swift; sourceTree = "<group>"; };
 		7C269E9D27D0FDFE00AB3B2B /* Publishers+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Publishers+Keyboard.swift"; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		7CC5007A27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerIntersectionCoordinator.swift; sourceTree = "<group>"; };
 		7CC5007E27CE179B0024F77C /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
 		7CC5008127CE185A0024F77C /* Rainbow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rainbow.swift; sourceTree = "<group>"; };
-		7CC5008627CE21300024F77C /* PairingInstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairingInstructionsView.swift; sourceTree = "<group>"; };
 		7CC5008827CE22F30024F77C /* PassThePhoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThePhoneViewModel.swift; sourceTree = "<group>"; };
 		7CC5008B27CE23850024F77C /* TeammateFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeammateFeedbackView.swift; sourceTree = "<group>"; };
 		7CC5008E27CE241D0024F77C /* InterestInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestInputView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				7CC5008127CE185A0024F77C /* Rainbow.swift */,
 				7CC5009427CE6C380024F77C /* StripesShape.swift */,
 				7C9CE7CC27CFCE2A007C38D8 /* OnAnimationComplete.swift */,
+				7C1867B927DFD90D00632DAC /* BackslideTransition.swift */,
 			);
 			path = "Accessory Views";
 			sourceTree = "<group>";
@@ -284,8 +287,8 @@
 				7CC5008A27CE23600024F77C /* Teammate Feedback */,
 				7CC5008327CE19F20024F77C /* Pass The Phone */,
 				7CC5007A27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift */,
+				7C1867B727DFD88300632DAC /* PlayerIntersectionCoordinatorViewModel.swift */,
 				7CD8BB7127CAF5E000F09132 /* PlayerIntersectionModel.swift */,
-				7CC5008627CE21300024F77C /* PairingInstructionsView.swift */,
 			);
 			path = "Player Pairing";
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C1867B827DFD88300632DAC /* PlayerIntersectionCoordinatorViewModel.swift in Sources */,
 				7CC5007F27CE179B0024F77C /* Device.swift in Sources */,
 				7CC5008C27CE23850024F77C /* TeammateFeedbackView.swift in Sources */,
 				7CC5007B27CE0FC50024F77C /* PlayerIntersectionCoordinator.swift in Sources */,
@@ -469,13 +473,13 @@
 				7C269E9827D0D6AD00AB3B2B /* PlaneView.swift in Sources */,
 				7C553B2C27CFD78D00A9C52C /* TeamResultsViewModel.swift in Sources */,
 				7CC5009527CE6C380024F77C /* StripesShape.swift in Sources */,
+				7C1867BA27DFD90D00632DAC /* BackslideTransition.swift in Sources */,
 				7CC5009A27CE76D80024F77C /* TeamView.swift in Sources */,
 				7CD8BB7027CAF49900F09132 /* PassThePhoneView.swift in Sources */,
 				7C9CE7CD27CFCE2A007C38D8 /* OnAnimationComplete.swift in Sources */,
 				7CC5008F27CE241D0024F77C /* InterestInputView.swift in Sources */,
 				7CD8BB7227CAF5E000F09132 /* PlayerIntersectionModel.swift in Sources */,
 				7C553B3027CFFF9300A9C52C /* ColorPickerView.swift in Sources */,
-				7CC5008727CE21300024F77C /* PairingInstructionsView.swift in Sources */,
 				7C269E9E27D0FDFE00AB3B2B /* Publishers+Keyboard.swift in Sources */,
 				7C9CE7CB27CFC75D007C38D8 /* CloudView.swift in Sources */,
 				7CC5008227CE185A0024F77C /* Rainbow.swift in Sources */,
@@ -650,6 +654,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Team-Dream-Machine-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dream Factory";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -682,6 +687,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Team-Dream-Machine-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Dream Factory";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

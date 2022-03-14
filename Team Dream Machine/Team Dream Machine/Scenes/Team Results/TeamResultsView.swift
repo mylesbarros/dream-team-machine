@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TeamResultsView: View {
+
+    // MARK: - Public Properties
+
     var body: some View {
         NavigationView {
             VStack {
@@ -39,7 +42,11 @@ struct TeamResultsView: View {
         }
     }
 
+    // MARK: - Private Properties
+
     @ObservedObject private var viewModel: TeamResultsViewModel
+
+    // MARK: - Initializers
 
     init(playerPreferences: [PlayerPairing]) {
         UITableView.appearance().backgroundColor = .clear

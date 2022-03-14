@@ -5,10 +5,11 @@
 //  Created by Myles Barros on 01.03.2022.
 //
 
-import AVFoundation
 import SwiftUI
 
 struct TeammateFeedbackView: View {
+
+    // MARK: - Public Properties
 
     var body: some View {
         VStack {
@@ -53,12 +54,14 @@ struct TeammateFeedbackView: View {
         ))
     }
 
+    // MARK: - Private Properties
+
     @ObservedObject private var viewModel: TeammateFeedbackViewModel
 
     private var screenWidth: CGFloat { Device.screen.width }
     private var screenHeight: CGFloat { Device.screen.height }
 
-    @State var player: AVAudioPlayer!
+    // MARK: - Initializers
 
     init(getFeedbackFor potentialTeammates: [Person], from player: Person, delegate: FeedbackDelegate) {
         viewModel = .init(
@@ -75,10 +78,14 @@ protocol FeedbackDelegate: AnyObject {
 
 final class TeammateFeedbackViewModel: ObservableObject {
 
+    // MARK: - Public Properties
+
     @Published var potentialTeammateName: String
     @Published var teammateImageName: String
 
     let player: Person
+
+    // MARK: - Private Properties
 
     private var currentTeammate: Person
 
@@ -88,6 +95,8 @@ final class TeammateFeedbackViewModel: ObservableObject {
     private weak var delegate: FeedbackDelegate?
 
     private let imageNameFactory = PlayerImageFactory()
+
+    // MARK: - Initializers
 
     init(potentialTeammates: [Person], for player: Person, delegatingTo delegate: FeedbackDelegate) {
         var teammates = potentialTeammates
@@ -102,6 +111,9 @@ final class TeammateFeedbackViewModel: ObservableObject {
     }
 }
 
+// MARK: - Protocol Extensions
+
+// MARK: InterestSelectionDelegate
 extension TeammateFeedbackViewModel: InterestSelectionDelegate {
     func userSelected(interest: PairingInterestLevel) {
         let pairingFeedback = PlayerPairing(
@@ -122,8 +134,6 @@ extension TeammateFeedbackViewModel: InterestSelectionDelegate {
                 }
             }
         }
-        else {
-            delegate?.userDidProvide(feedback: feedback)
-        }
+        else { delegate?.userDidProvide(feedback: feedback) }
     }
 }

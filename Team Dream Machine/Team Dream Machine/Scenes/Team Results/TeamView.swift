@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct TeamView: View {
+
+    // MARK: - Public Properties
+
     var body: some View {
         List {
             ForEach(viewModel.teamMembers) { playerName in
@@ -16,7 +19,11 @@ struct TeamView: View {
         }
     }
 
+    // MARK: - Private Properties
+
     private let viewModel: TeamViewModel
+
+    // MARK: - Initializers
 
     init(teamMembers: [Person]) {
         viewModel = .init(teamMembers: teamMembers)
@@ -25,7 +32,11 @@ struct TeamView: View {
 
 struct TeamViewModel {
 
+    // MARK: - Public Properties
+
     let teamMembers: [Person]
+
+    // MARK: - Initializers
 
     init(teamMembers: [Person]) {
         self.teamMembers = teamMembers

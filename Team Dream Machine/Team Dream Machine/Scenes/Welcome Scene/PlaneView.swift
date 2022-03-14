@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PlaneView: View {
 
+    // MARK: - Public Properties
+
     var body: some View {
         Image("Plane")
             .resizable()
@@ -17,9 +19,13 @@ struct PlaneView: View {
             .offset(x: viewModel.isFlying ? -300 : screenWidth, y: -134)
     }
 
+    // MARK: - Private Properties
+
     private var screenWidth: CGFloat
 
     @ObservedObject private var viewModel: PlaneViewModel = .init()
+
+    // MARK: - Initializers
 
     init(screenWidth: CGFloat) {
         self.screenWidth = screenWidth
@@ -28,9 +34,15 @@ struct PlaneView: View {
 
 final class PlaneViewModel: ObservableObject {
 
+    // MARK: - Public Properties
+
     @Published var isFlying: Bool = false
 
+    // MARK: - Private Properties
+
     private let flyingAnimation = Animation.linear(duration: 24)
+
+    // MARK: - Initializers
 
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: {

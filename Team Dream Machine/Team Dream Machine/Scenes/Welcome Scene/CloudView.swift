@@ -72,6 +72,8 @@ struct CloudView: View {
     private let driftAnimation: Animation
     private let sizeScaling: CGFloat
 
+    // MARK: - Initializers
+
     init(type: CloudType, position: CloudPosition, verticalOffset: CGFloat = 0, screenWidth: CGFloat, hardcodedStartingX: CGFloat? = nil) {
         self.type = type
         self.position = position

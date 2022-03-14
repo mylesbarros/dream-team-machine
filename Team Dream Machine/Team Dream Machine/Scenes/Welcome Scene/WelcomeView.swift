@@ -110,10 +110,7 @@ struct WelcomeView: View {
                 startPoint: .top,
                 endPoint: .bottom
             ))
-            .gesture(TapGesture().onEnded({
-                guard viewModel.showTapToContinue else { return }
-                self.viewModel.navigateToRosterList = true
-            }))
+            .gesture(TapGesture().onEnded({ self.viewModel.navigateToRosterList = true }))
         }
         .fullScreenCover(isPresented: $viewModel.navigateToRosterList, content: { RosterList() })
     }
@@ -123,8 +120,12 @@ struct WelcomeView: View {
 
 final class WelcomeViewModel: ObservableObject {
 
+    // MARK: - Public Properties
+
     @Published var showTapToContinue: Bool = false
     @Published var navigateToRosterList: Bool = false
+
+    // MARK: - Initializers
 
     init() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 4.5, execute: {
